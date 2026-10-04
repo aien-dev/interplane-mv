@@ -1,5 +1,9 @@
 # Changelog
 
+## Unreleased (0.3, Trust lane)
+
+- Trust vocabulary reconciled (plan cut P1, gaps G1-G3): CROSSVEIL.md default is `tool_result` + `unknown` (the undefined `untrusted_tool_content` and `origin` are gone), VERSIONING.md lists `ContentKind` in place of the undefined `Origin`. Python now reads an unrecognized or non-string `content_kind` as `unknown`, as Rust did; non-string trust is `external_untrusted`. Odysseus `system` result integrity maps to `trusted_runtime` unless Odysseus's own gate marks the result untrusted. Conformance cases 26, 27 (with a harness-only `mock_provenance` seam and JCS round-trip checks); 27/27 byte-identical.
+
 ## Unreleased (0.2, CrossAxis lane)
 
 - 0.2 report: `docs/REPORT-0.2.md`. Pre-registered gate verdict FAIL (O1 0.865, O2 0/5; T 0.877 and S pass).
