@@ -31,7 +31,7 @@ def test_runner_writes_sorted_verdicts(tmp_path, capsys):
     }
     assert text == jcs(data) + "\n"
     assert all(o["result_digest"] for v in data.values() for o in v["observed"])
-    assert "25/25" in capsys.readouterr().out or len(CASES) != 25
+    assert f"{len(CASES)}/{len(CASES)}" in capsys.readouterr().out
 
 
 @pytest.mark.skipif(not CASES, reason="no conformance fixtures")
