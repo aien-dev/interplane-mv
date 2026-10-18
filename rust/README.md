@@ -1,12 +1,12 @@
-# INTERPLANE 0.1: Rust reference implementation
+# INTERPLANE Rust reference implementation (workspace version 0.3.0)
 
-Six crates, minimal dependencies (serde, serde_json, sha2, regex, thiserror; the probe adds ureq). No async runtime.
+Six crates, minimal dependencies (serde, serde_json, sha2, regex, thiserror; the probe adds ureq, and the conformance crate's default `schema-check` feature adds jsonschema). No async runtime. Since 2026-10-15 this is the only implementation; the Python SDK was removed (see the root README).
 
 - `interplane-core`: wire types, JCS canonical JSON and digests, envelope validation, request ledger, lifecycle state machine.
-- `interplane-lenshift`: dialect parsers (`openai`, `qwen35`) that turn model output into tool requests.
+- `interplane-lenshift`: dialect parsers (`openai`, `openai_stream`, `qwen35`, `aien_legacy`; `ajax` reserved) that turn model output into tool requests.
 - `interplane-crossaxis`: mapping tables, argument coercion, capability selection and measurement.
 - `interplane-crossveil`: the admission pipeline (fails closed) and the mock runtime.
-- `interplane-conformance`: runs `conformance/fixtures` and writes verdicts.
+- `interplane-conformance`: runs `conformance/fixtures` and writes verdicts; its `interplane-corpus` tool checks schemas and fixtures, freezes `TRUST-DIGEST.txt` and computes adapter subsets; `adapter_runner` judges a new adapter.
 - `interplane-probe`: qualifies an OpenAI-compatible endpoint with measured probes.
 
 ```

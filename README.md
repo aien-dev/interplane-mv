@@ -4,6 +4,15 @@
 
 > Models express intent. Runtimes retain authority. INTERPLANE defines the boundary between them.
 
+An attachment of [Aienix](https://github.com/aien-dev/aienix), the core tree of AIEN. INTERPLANE lives in
+its own repository and plugs into the core at a boundary. Website: [interplane.io](https://interplane.io).
+
+**Status (2026-10-18): pre-1.0, version 0.3.0.** 0.1 (Reality Layer) is the base, 0.2 (Capability)
+closed with its gate failed and the failure published, 0.3 (Trust) closed with its gate passed; 0.4
+and 0.5 are planned, not built. The last merged work (2026-10-16) moved the conformance tools and examples to Rust, removed the
+Python SDK and adapters, and enrolled the repository in AIEN's Spark verification pipeline.
+[`STATUS.md`](STATUS.md) is the authority on what is implemented, tested, conformant or qualified.
+
 ```
 Model side:        Qwen3.5      Ajax (when published)      other local or hosted models
                         \            |             /
@@ -45,7 +54,7 @@ are planned, not built (`ROADMAP.md`).
 | Module | What it is | Status |
 |---|---|---|
 | **Core** | normative JSON Schemas (2020-12) for envelope, intent, capability, decision, result, event, catalog, selection, input record, probe report; versioning and error codes | see `STATUS.md` |
-| **Lenshift** | model dialect parsers and result renderers: `openai`, `qwen35`; `ajax` reserved | see `STATUS.md` |
+| **Lenshift** | model dialect parsers and result renderers: `openai`, `openai_stream`, `qwen35`, `aien_legacy`; `ajax` reserved | see `STATUS.md` |
 | **Crossveil** | the authority-boundary contract: two runtime callbacks, a lifecycle with fail-closed invariants, trust classes | see `STATUS.md` |
 | **CrossAxis** | explicit, versioned capability mapping; a deterministic domain selector with a before/after receipt; bounded expansion | see `STATUS.md` |
 | **Interplane Probe** | measured capability qualification of an OpenAI-compatible endpoint | see `STATUS.md` |
