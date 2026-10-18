@@ -1,11 +1,11 @@
 # The Spark pipeline: how a pull request gets tested and merged
 
 Since 2026-10-16 the DGX Spark is the only test judge for this repository (ADR 0033 Decision 11,
-phase 3, agreed by Drake on 2026-10-15). Enrollment comes first (step 1:
-the gates and trust anchors); the hosted `ci` workflow keeps running on pull requests and pushes
-until step 2 retires it to a manual trigger. Each of its jobs is a Spark gate in `tests/gates/` (one `.gate` per job,
-same commands, dispatched by `tests/gates/run.sh`). The `qualification` workflow was already manual
-(it needs a live model endpoint) and is not a gate.
+phase 3, agreed by Drake on 2026-10-15). On 2026-10-18 the hosted test workflows were removed; the
+only test-related workflow left is AIEN Verification (`.github/workflows/aien-verification.yml`),
+which builds nothing from this repository and only checks the bundle the Spark signs. The manual
+`qualification` workflow stays: it probes a live model endpoint on a self-hosted runner and tests no
+code on GitHub. Each former hosted job is a Spark gate in `tests/gates/`.
 
 ## What happens to every pull request
 
@@ -35,7 +35,7 @@ Without the label nothing is merged. Remove the label to stop a merge.
 
 To add the label from a terminal use the REST call (`gh pr edit --add-label` can fail on
 repositories with a Projects (classic) error):
-`gh api -X POST repos/aien-spark/interplane/issues/<number>/labels -f 'labels[]=ready-to-merge'`.
+`gh api -X POST repos/aien-dev/interplane-mv/issues/<number>/labels -f 'labels[]=ready-to-merge'`.
 
 ## Changes to the pipeline itself
 
