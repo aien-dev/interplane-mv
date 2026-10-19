@@ -8,7 +8,8 @@ was taken and is listed below.
 ## Layout
 
 - `fixtures/NN-slug.json`: the 27 required cases (01-18 core; 19 valid write, 20 missing required argument, 21 stale capability mapping, 22 untrusted tool result, 23 untrusted memory result; 24 expansion by requested_excluded, 25 expansion refused by bound; 26 unrecognized content_kind, 27 absent, null and unrecognized trust). `fixtures/injection/NN-slug.json`: injection cases (0.3 cut I1: scripted obedient model, judged for effects and content-derived intents; seed cases 01 workspace, 02 tool output, 03 forged approval; cut I2 cases 04-19 for C01 to C05, fixture-level `mock_data`; cut I3 cases 20-34 for C06 to C09 and C11 (20-22 C06, 23-25 C07, 26-28 C08, 29-31 C09, 32-34 C11); cut I4 cases 35-42 for C12 (35-38) and C13 (39-42), fixture-level `mock_fault`). `negative-controls.json` and `TRUST-DIGEST.txt`: the negative-control expectations (V1 to V8) and the corpus freeze file. `fixtures/digest/jcs-01.json`: the JCS digest check. `fixtures/lifecycle/NN-slug.json`: approval continuation cases driven against the lifecycle directly (01 forged id, 02 empty or missing id, 03 id minted for another request, 04 the runtime-minted id, 05 non-`authorized` continuation values); format in `spec/CORE.md`. `fixtures/approval/NN-slug.json`: approval cases A01 to A14 of bench/PROTOCOL-0.3.md plus SDK follow-ups 15 (explicit `denied` continuation value) and 16 (continuation decision citing another request_id), and 17, the protocol's A15 (`protocol_case: "A15"`: the approved effect fails at the provider after the approval was spent; mock `execute_raises`) driven through the pipeline with host-side `approve`, `cancel`, `restart` and `mock` steps (case name `approval-ANN-slug`); format in `spec/CORE.md` (Approval continuation).
-- `../dialects/fixtures/{openai,qwen35}/*.json`: Lenshift parse fixtures.
+- `../dialects/fixtures/{openai,openai_stream,qwen35,aien_legacy}/*.json`: Lenshift parse fixtures (56 in all, as
+  `interplane-corpus validate` reports). `../dialects/replay/` holds recorded provider streams.
 - `interplane-corpus validate` (`rust/crates/interplane-conformance`, module `fixture_check`): checks
   every envelope and intent against `spec/schemas/`, fixture shape, runtime-count consistency, the JCS
   fixture, plus negative controls. Exit status is non-zero on failure. Run from `rust/`:
@@ -89,10 +90,11 @@ authorizes, and fail if the policy is removed.
 
 ## Raw evidence dumps (0.3 cut R1a)
 
-Both runners take `--dump <dir>` and write, per pipeline case, `<case>.results.json` (every result payload in
+The runner (`interplane-conformance`) takes `--dump <dir>` and writes, per pipeline case, `<case>.results.json` (every result payload in
 canonical form, `provenance.duration_ms` null) and `<case>.inputs.json` (the full input ledger of the case trace,
-whether or not the fixture asserts it). The verdict files are unchanged. The two runners write byte-identical dumps;
-REPORT-0.3 counts gates P1, P2 and P4 over them (bench/PROTOCOL-0.3.md section 9).
+whether or not the fixture asserts it). The verdict files are unchanged. When REPORT-0.3 was written, the Rust and
+the now-removed Python runner wrote byte-identical dumps; REPORT-0.3 counts gates P1, P2 and P4 over them
+(bench/PROTOCOL-0.3.md section 9).
 
 ## Corpus accounting (gate I)
 
@@ -117,7 +119,14 @@ calls `decide`, so its `ObservedRecord` has `decide_invoked` false.
 
 The runner writes its full `observed` array (with `result_digest` filled) as canonical JSON (RFC 8785).
 The Rust runner's output must equal `conformance/expected/verdicts.json` byte for byte (the retired
-Python runner produced the same file; CI compares on every change). The runner also compares its
+Python runner produced the same file). The Spark gate `INTERPLANE-RUST` (`tests/gates/run.sh rust`) compares
+them on every change that touches the code. To check by hand, from `rust/`:
+
+```
+cargo run -q -p interplane-conformance --bin interplane-conformance -- ../conformance/fixtures --out /tmp/verdicts.json
+cmp /tmp/verdicts.json ../conformance/expected/verdicts.json
+```
+ The runner also compares its
 array to the fixture's `expected.observed` after setting every `result_digest` to null.
 
 ## Spec ambiguities resolved (fail-closed), with spec citations
