@@ -189,6 +189,7 @@ To report a vulnerability, see [`SECURITY.md`](SECURITY.md).
 
 ## License
 
-Apache-2.0 for the protocol, schemas, fixtures and the Rust reference SDK (`LICENSE`).
-`adapters/aien` depends on AGPL host projects and is AGPL-3.0-or-later, with its own `LICENSE`, as
-are the Odysseus catalog records in `adapters/odysseus`; see `docs/adr/0002-licensing.md`.
+AGPL-3.0-or-later for the whole repository (`LICENSE`), the same license as the other AIEN
+repositories. `adapters/aien` keeps its own copy of the same text. Releases published before
+2026-10-19 were under Apache-2.0 and stay available under those terms; see
+`docs/adr/0005-relicense-agpl.md`.

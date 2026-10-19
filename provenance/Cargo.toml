@@ -5,7 +5,7 @@ resolver = "2"
 name = "interplane-provenance"
 version = "0.0.1"
 edition = "2021"
-license = "Apache-2.0"
+license = "AGPL-3.0-or-later"
 description = "Companion provenance manifest v0: offline verifier binding corpus, training, export, AIEN load, INTERPLANE trace and effect receipt by digest and retained bytes. Evidence, never authority."
 publish = false
 

@@ -1,6 +1,6 @@
 # ADR 0002: Licensing
 
-Status: Accepted (2026-10-04)
+Status: Superseded by ADR 0005 (2026-10-19). Kept as written for the record.
 
 Facts checked on 2026-10-04: Odysseus is AGPL-3.0; the AIEN repositories are AGPL-3.0-or-later
 (relicensed 2026-10-04); the Qwen3.5 chat template is Apache-2.0.
