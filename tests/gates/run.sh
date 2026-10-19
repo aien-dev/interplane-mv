@@ -147,6 +147,14 @@ case "$step" in
     obs aegis_runtime_pin "\"$AEGIS_RUNTIME_REV\""
     obs aien_protocols_pin "\"$AIEN_PROTOCOLS_REV\""
     cd "$tmp/interplane/adapters/aien"
+    # libsqlite3-sys (via aegis-runtime) copies its bundled bindings from the registry, which is
+    # read-only on the Spark judge, so OUT_DIR/bindgen.rs is left mode 0444 in the shared target
+    # dir. When the build script runs again it cannot overwrite that file ("Could not copy
+    # bindings to output directory: Permission denied", operator run of 657081c4, 2026-10-19).
+    # Make such leftovers writable first; the build script then rewrites them.
+    if [ -d "$TARGET" ]; then
+      find "$TARGET" -path '*/build/libsqlite3-sys-*/out/*' -type f ! -perm -u+w -exec chmod u+w {} + 2>/dev/null || true
+    fi
     cargo fmt --all --check
     cargo clippy --all-targets -- -D warnings
     cargo test
