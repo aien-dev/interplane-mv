@@ -14,7 +14,7 @@ spent only by AIEN. Nothing under `rust/`, `spec/` or
 ## Pinned AIEN sources
 
 `aien-capability` and `aien-mcp` are git dependencies pinned to
-`aien-spark/aien-sovereign-core@9b5e6e82359f4ad6b6f03042e83ef6411c5f15ce` (main 2026-10-08; `crates/aien-capability` and `crates/aien-mcp` are byte-identical to 4d4dfd4, `git diff --stat 4d4dfd4 9b5e6e8 -- crates/aien-capability crates/aien-mcp` is empty, and the live gate below passed against a daemon built from 9b5e6e8. 4d4dfd4 was main 2026-10-07, after PR #296 merged: the daemon honours only grants it minted itself and refuses every caller-written authorization note, sovereign-core #261; and PR #295: an approved proposal carries a signed requirements goal, a missing one is refused, #289. `crates/aien-capability` and `crates/aien-mcp` are byte-identical to 8bcd79b, main after PR #262 merged: the authenticated `ComposeApprovedProposal` daemon command the ledger route uses; `crates/aien-capability` and `crates/aien-mcp` are byte-identical to 7d37da1, after PR #260 merged: two-phase approval spend, a grant is reserved at mint, committed when the effect runs, released if the effect is dropped, and `EffectLane::with_clock` re-checks expiry at commit; before #260 `crates/aien-capability` and `crates/aien-mcp` are byte-identical to 0bdc97a, main after PR #208 merged, which binds the idempotency ledger to effect identity and lets an approver revoke an unspent grant; before it, PR #207 merged,
+[`aien-dev/aien-sovereign-core-mv`](https://github.com/aien-dev/aien-sovereign-core-mv) at `9b5e6e82359f4ad6b6f03042e83ef6411c5f15ce` (main 2026-10-08; `crates/aien-capability` and `crates/aien-mcp` are byte-identical to 4d4dfd4, `git diff --stat 4d4dfd4 9b5e6e8 -- crates/aien-capability crates/aien-mcp` is empty, and the live gate below passed against a daemon built from 9b5e6e8. 4d4dfd4 was main 2026-10-07, after PR #296 merged: the daemon honours only grants it minted itself and refuses every caller-written authorization note, sovereign-core #261; and PR #295: an approved proposal carries a signed requirements goal, a missing one is refused, #289. `crates/aien-capability` and `crates/aien-mcp` are byte-identical to 8bcd79b, main after PR #262 merged: the authenticated `ComposeApprovedProposal` daemon command the ledger route uses; `crates/aien-capability` and `crates/aien-mcp` are byte-identical to 7d37da1, after PR #260 merged: two-phase approval spend, a grant is reserved at mint, committed when the effect runs, released if the effect is dropped, and `EffectLane::with_clock` re-checks expiry at commit; before #260 `crates/aien-capability` and `crates/aien-mcp` are byte-identical to 0bdc97a, main after PR #208 merged, which binds the idempotency ledger to effect identity and lets an approver revoke an unspent grant; before it, PR #207 merged,
 which makes the authority exposure-aware, on top of PR #204 single-use approvals and the PR #203
 authority seam). `aegis` (feature `aegis-gate`, on by default) cannot be a git dependency because
 `aegis-runtime`'s own `Cargo.toml` reaches a sibling checkout by relative path
@@ -23,11 +23,12 @@ checkout:
 
 ```
 <parent>/interplane/adapters/aien           (this crate)
-<parent>/interplane-audit/aegis-runtime      aien-spark/aegis-runtime  @ AEGIS_RUNTIME_REV in PINS
-<parent>/interplane-audit/aien-protocols     aien-spark/aien-protocols @ AIEN_PROTOCOLS_REV in PINS
+<parent>/interplane-audit/aegis-runtime      aien-dev/aegis-runtime-mv  @ AEGIS_RUNTIME_REV in PINS
+<parent>/interplane-audit/aien-protocols     aien-dev/aien-protocols-mv @ AIEN_PROTOCOLS_REV in PINS
 ```
 
-All sibling pins live in one file, `PINS` (this directory). CI (`.github/workflows/ci.yml`, job `adapter-aien`)
+All sibling pins live in one file, `PINS` (this directory). The Spark gate `INTERPLANE-ADAPTER-AIEN`
+(`tests/gates/run.sh adapter-aien`; it replaced the hosted job `adapter-aien`, removed on 2026-10-18)
 and local setup both call `setup-siblings.sh`, which reads `PINS`, so they use the same commits:
 
 ```
@@ -39,7 +40,9 @@ cd adapters/aien && cargo test           # toolchain is pinned by /rust-toolchai
 The script also fails if the `aien-sovereign-core` rev in `Cargo.toml` differs from `SOVEREIGN_CORE_REV` in `PINS`.
 To move a pin, change `PINS` (and `Cargo.toml` for sovereign-core) in the same PR.
 Without the `aegis-gate` feature the crate still builds and every `decide()` is `denied` (fail closed).
-Building `aegis-runtime` writes `mojo/libaegis_simd.so` inside that checkout (its `build.rs`).
+Building `aegis-runtime` at the pinned commit (f4e8709, 2026-10-04) writes `mojo/libaegis_simd.so` inside that
+checkout (its `build.rs`) when a `mojo` compiler is installed. aegis-runtime removed Mojo on its `main` on
+2026-10-15 (aegis-runtime PR #49); the pin here has not moved past that yet.
 
 ## Reused from AIEN (called for real)
 
@@ -457,8 +460,9 @@ cargo test --offline
 cargo fmt --check && cargo clippy --offline --all-targets -- -D warnings
 ```
 
-Building `aegis` runs its `build.rs`, which writes `mojo/libaegis_simd.so` into the pinned
-aegis clone as an untracked file. This crate is its own Cargo workspace and is not a member of
+Building `aegis` at the pinned commit runs its `build.rs`, which writes `mojo/libaegis_simd.so` into the
+pinned aegis clone as an untracked file when a `mojo` compiler is installed (aegis-runtime `main` has had
+no Mojo since 2026-10-15). This crate is its own Cargo workspace and is not a member of
 `rust/Cargo.toml`.
 
 ### The same cycle with a real model turn
