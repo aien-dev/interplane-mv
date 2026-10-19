@@ -78,7 +78,9 @@ case "$step" in
   package)
     # Release check: every crate packages and builds from its .crate alone.
     cd rust
-    cargo package --workspace --locked
+    # The Spark judge has no network (2026-10-19: index.crates.io did not resolve), so package
+    # from the local registry cache, like every other gate here.
+    cargo package --workspace --locked --offline
     ;;
   negative-controls)
     # trust corpus and protocol digests match conformance/TRUST-DIGEST.txt
