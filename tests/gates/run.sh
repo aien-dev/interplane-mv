@@ -78,7 +78,22 @@ case "$step" in
   package)
     # Release check: every crate packages and builds from its .crate alone.
     cd rust
-    cargo package --workspace --locked
+    # The Spark judge has no network (2026-10-19: index.crates.io did not resolve), so package
+    # from the local registry cache, like every other gate here.
+    # Its CARGO_HOME is read-only. Verifying a crate that depends on another workspace crate
+    # unpacks that crate from cargo's temporary registry into $CARGO_HOME/registry/src, and on a
+    # read-only home cargo fails with "no hash listed for interplane-core". So package with a
+    # scratch CARGO_HOME: a copy of the index, the real .crate cache and unpacked sources linked
+    # read-only, and a writable registry/src for the workspace crates.
+    real_home="${CARGO_HOME:-$HOME/.cargo}"
+    pkg_home="$tmp/cargo-home"
+    mkdir -p "$pkg_home/registry/src" "$pkg_home/registry/cache"
+    if [ -d "$real_home/registry/index" ]; then cp -R "$real_home/registry/index" "$pkg_home/registry/index"; chmod -R u+w "$pkg_home/registry/index"; fi
+    for d in "$real_home"/registry/cache/* "$real_home"/registry/src/*; do
+      [ -d "$d" ] && ln -s "$d" "$pkg_home/registry/$(basename "$(dirname "$d")")/$(basename "$d")"
+    done
+    [ -d "$real_home/git" ] && ln -s "$real_home/git" "$pkg_home/git"
+    CARGO_HOME="$pkg_home" cargo package --workspace --locked --offline
     ;;
   negative-controls)
     # trust corpus and protocol digests match conformance/TRUST-DIGEST.txt
@@ -132,6 +147,14 @@ case "$step" in
     obs aegis_runtime_pin "\"$AEGIS_RUNTIME_REV\""
     obs aien_protocols_pin "\"$AIEN_PROTOCOLS_REV\""
     cd "$tmp/interplane/adapters/aien"
+    # libsqlite3-sys (via aegis-runtime) copies its bundled bindings from the registry, which is
+    # read-only on the Spark judge, so OUT_DIR/bindgen.rs is left mode 0444 in the shared target
+    # dir. When the build script runs again it cannot overwrite that file ("Could not copy
+    # bindings to output directory: Permission denied", operator run of 657081c4, 2026-10-19).
+    # Make such leftovers writable first; the build script then rewrites them.
+    if [ -d "$TARGET" ]; then
+      find "$TARGET" -path '*/build/libsqlite3-sys-*/out/*' -type f ! -perm -u+w -exec chmod u+w {} + 2>/dev/null || true
+    fi
     cargo fmt --all --check
     cargo clippy --all-targets -- -D warnings
     cargo test
