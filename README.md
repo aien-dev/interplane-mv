@@ -27,7 +27,7 @@ standardizes what crosses between them and makes it measurable.
 
 ## Where it fits in AIEN
 
-INTERPLANE is an attachment of [Aienix](https://github.com/aien-dev/aienix), the core tree of AIEN:
+INTERPLANE is an attachment of [AienOS](https://github.com/aien-dev/aienix), the core tree of AIEN:
 it lives in its own repository and plugs into the core at a boundary. Related repositories:
 
 - [aien-dev/aien-sovereign-core-mv](https://github.com/aien-dev/aien-sovereign-core-mv): the AIEN
@@ -52,7 +52,7 @@ it lives in its own repository and plugs into the core at a boundary. Related re
 - 2026-10-16: the repository joined the Spark verification pipeline (PR #109), and the DGX Spark
   became the only test judge. On 2026-10-18 the hosted test workflows were removed (PRs #112, #113;
   see `docs/PIPELINE.md`).
-- Open tracking issues: #101 (INTERPLANE against the native AIENOS authority) and #80 (a protocol
+- Open tracking issues: #101 (INTERPLANE against the native Aienux authority) and #80 (a protocol
   revision candidate on refusal text).
 
 [`STATUS.md`](STATUS.md) is the only place that says what is implemented, tested, conformant or
