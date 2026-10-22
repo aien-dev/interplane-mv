@@ -1,0 +1,54 @@
+{
+  "cases": [
+    {
+      "name": "fragmented-1",
+      "exit": 0,
+      "stdout_bytes": 422
+    },
+    {
+      "name": "fragmented-2",
+      "exit": 0,
+      "stdout_bytes": 422
+    },
+    {
+      "name": "fragmented-7",
+      "exit": 0,
+      "stdout_bytes": 422
+    },
+    {
+      "name": "fragmented-31",
+      "exit": 0,
+      "stdout_bytes": 422
+    },
+    {
+      "name": "missing-trusted-channel",
+      "exit": 20
+    },
+    {
+      "name": "stdin-EINTR",
+      "exit": 0,
+      "stdout_bytes": 434
+    },
+    {
+      "name": "stdin-EIO",
+      "exit": 20,
+      "stdout_bytes": 0
+    },
+    {
+      "name": "stdout-EIO",
+      "exit": 29,
+      "stdout_bytes": 0
+    },
+    {
+      "name": "normal-syscall-trace",
+      "exit": 0,
+      "stdout_bytes": 434
+    }
+  ],
+  "observed_syscalls": [
+    "execve",
+    "read",
+    "write",
+    "exit"
+  ]
+}

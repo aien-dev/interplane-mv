@@ -1,0 +1,725 @@
+    Checking cfg-if v1.0.5
+    Checking memchr v2.8.3
+    Checking typenum v1.20.1
+    Checking regex-syntax v0.8.11
+    Checking itoa v1.0.18
+    Checking stable_deref_trait v1.2.1
+   Compiling getrandom v0.3.4
+    Checking libc v0.2.190
+    Checking once_cell v1.21.4
+    Checking litemap v0.8.3
+    Checking writeable v0.6.4
+    Checking serde_core v1.0.229
+    Checking zmij v1.0.23
+    Checking thiserror v2.0.21
+    Checking zerofrom v0.1.8
+    Checking smallvec v1.16.2
+    Checking utf8_iter v1.0.4
+    Checking num-traits v0.2.19
+    Checking icu_normalizer_data v2.3.0
+    Checking percent-encoding v2.3.2
+    Checking zerocopy v0.8.59
+    Checking icu_properties_data v2.3.0
+    Checking bit-vec v0.8.0
+    Checking base64 v0.22.1
+    Checking yoke v0.8.3
+    Checking scopeguard v1.2.0
+    Checking ref-cast v1.0.27
+    Checking borrow-or-share v0.2.4
+    Checking lazy_static v1.5.1
+    Checking vsimd v0.8.0
+    Checking outref v0.5.2
+    Checking uuid v1.27.0
+    Checking bytecount v0.6.9
+    Checking lock_api v0.4.14
+    Checking num-cmp v0.1.0
+   Compiling shlex v2.0.1
+   Compiling find-msvc-tools v0.1.14
+    Checking zerovec v0.11.8
+    Checking zerotrie v0.2.5
+    Checking zeroize v1.9.0
+   Compiling crc32fast v1.5.2
+    Checking aho-corasick v1.1.5
+    Checking bit-set v0.8.0
+    Checking untrusted v0.9.0
+    Checking simd-adler32 v0.3.10
+   Compiling rustix v1.1.5
+   Compiling rustls v0.23.45
+    Checking rustls-pki-types v1.15.1
+    Checking generic-array v0.14.7
+   Compiling cc v1.6.0
+    Checking adler2 v2.0.1
+   Compiling getrandom v0.4.3
+    Checking form_urlencoded v1.2.2
+    Checking num-integer v0.1.47
+    Checking num-complex v0.4.6
+    Checking log v0.4.34
+    Checking bitflags v2.13.2
+    Checking miniz_oxide v0.9.1
+    Checking uuid-simd v0.8.0
+    Checking linux-raw-sys v0.12.1
+    Checking tinystr v0.8.4
+    Checking potential_utf v0.1.6
+    Checking num-bigint v0.4.8
+    Checking num-iter v0.1.46
+    Checking cpufeatures v0.2.17
+    Checking parking_lot_core v0.9.12
+    Checking icu_collections v2.3.0
+    Checking getrandom v0.2.17
+    Checking block-buffer v0.10.4
+    Checking crypto-common v0.1.7
+    Checking icu_locale_core v2.3.0
+    Checking webpki-roots v1.0.9
+    Checking subtle v2.6.1
+    Checking fastrand v2.5.0
+    Checking wait-timeout v0.2.1
+    Checking quick-error v1.2.3
+    Checking digest v0.10.7
+    Checking fnv v1.0.7
+    Checking webpki-roots v0.26.11
+    Checking unarray v0.1.4
+    Checking flate2 v1.1.10
+    Checking parking_lot v0.12.5
+    Checking rand_core v0.9.5
+    Checking sha2 v0.10.9
+    Checking regex-automata v0.4.18
+    Checking rand v0.9.5
+    Checking rand_xorshift v0.4.0
+    Checking serde v1.0.229
+    Checking serde_json v1.0.151
+    Checking icu_provider v2.3.1
+   Compiling ring v0.17.14
+    Checking icu_normalizer v2.3.0
+    Checking icu_properties v2.3.0
+    Checking num-rational v0.4.2
+    Checking fluent-uri v0.3.2
+    Checking email_address v0.2.9
+    Checking num v0.4.3
+    Checking fraction v0.15.3
+    Checking tempfile v3.27.0
+    Checking idna_adapter v1.2.2
+    Checking rusty-fork v0.3.1
+    Checking idna v1.1.0
+    Checking url v2.5.8
+    Checking ahash v0.8.12
+    Checking ppv-lite86 v0.2.21
+    Checking rand_chacha v0.9.0
+    Checking referencing v0.30.0
+    Checking proptest v1.10.0
+    Checking regex v1.13.1
+    Checking fancy-regex v0.14.0
+    Checking interplane-core v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-core)
+    Checking jsonschema v0.30.0
+    Checking interplane-lenshift v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-lenshift)
+    Checking interplane-crossaxis v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-crossaxis)
+    Checking rustls-webpki v0.103.15
+    Checking interplane-crossveil v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-crossveil)
+    Checking interplane-conformance v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-conformance)
+    Checking ureq v2.12.1
+    Checking interplane-probe v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-probe)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 3.76s
+   Compiling bit-vec v0.8.0
+   Compiling getrandom v0.3.4
+   Compiling zeroize v1.9.0
+   Compiling getrandom v0.2.17
+   Compiling untrusted v0.9.0
+   Compiling bitflags v2.13.2
+   Compiling linux-raw-sys v0.12.1
+   Compiling simd-adler32 v0.3.10
+   Compiling adler2 v2.0.1
+   Compiling form_urlencoded v1.2.2
+   Compiling crc32fast v1.5.2
+   Compiling getrandom v0.4.3
+   Compiling subtle v2.6.1
+   Compiling log v0.4.34
+   Compiling fastrand v2.5.0
+   Compiling ppv-lite86 v0.2.21
+   Compiling wait-timeout v0.2.1
+   Compiling quick-error v1.2.3
+   Compiling fnv v1.0.7
+   Compiling unarray v0.1.4
+   Compiling ring v0.17.14
+   Compiling url v2.5.8
+   Compiling interplane-crossveil v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-crossveil)
+   Compiling miniz_oxide v0.9.1
+   Compiling ahash v0.8.12
+   Compiling rustls-pki-types v1.15.1
+   Compiling rand_core v0.9.5
+   Compiling bit-set v0.8.0
+   Compiling interplane-lenshift v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-lenshift)
+   Compiling rustix v1.1.5
+   Compiling rand_chacha v0.9.0
+   Compiling referencing v0.30.0
+   Compiling rand v0.9.5
+   Compiling fancy-regex v0.14.0
+   Compiling rand_xorshift v0.4.0
+   Compiling webpki-roots v1.0.9
+   Compiling jsonschema v0.30.0
+   Compiling webpki-roots v0.26.11
+   Compiling flate2 v1.1.10
+   Compiling interplane-crossaxis v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-crossaxis)
+   Compiling rustls-webpki v0.103.15
+   Compiling tempfile v3.27.0
+   Compiling rustls v0.23.45
+   Compiling rusty-fork v0.3.1
+   Compiling proptest v1.10.0
+   Compiling interplane-conformance v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-conformance)
+   Compiling ureq v2.12.1
+   Compiling interplane-core v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-core)
+   Compiling interplane-probe v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-probe)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 4.33s
+     Running unittests src/lib.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_conformance-81b0d3d75014c6b6)
+
+running 2 tests
+test ojson::tests::float_spelling_matches_python_repr ... ok
+test ojson::tests::keeps_key_order_and_python_text ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_conformance-9581bef8d683381a)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/interplane-corpus.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_corpus-6023bb1fc61cc0c5)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/adapter_runner.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/adapter_runner-e285962f5accf492)
+
+running 2 tests
+test toy_reproduction_matches_recorded_verdicts ... ok
+test home_check_matches_recorded_verdicts ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.80s
+
+     Running tests/default_build.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/default_build-e5ee923046e1c858)
+
+running 2 tests
+test default_build_refuses_a_variant ... ok
+test default_binary_carries_no_variant_code ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.73s
+
+     Running tests/fixtures.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/fixtures-ebd6902ffe39dfb8)
+
+running 6 tests
+test comparison_detects_disagreement ... ok
+test a_vacuous_or_violating_injection_case_fails ... ok
+test expanded_in_capability_is_still_denied_and_a_changed_selection_is_detected ... ok
+test verdicts_are_deterministic ... ok
+test every_fixture_passes ... ok
+test every_injection_fixture_passes_and_is_judged ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.10s
+
+     Running tests/negative_controls.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/negative_controls-642e1f26cc01d53f)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/schemas.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/schemas-1dfd87c69c30cf2a)
+
+running 4 tests
+test fixture_envelopes_validate ... ok
+test expansion_receipts_and_measure_validate ... ok
+test catalog_selection_and_events_validate ... ok
+test produced_messages_validate ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.22s
+
+     Running tests/subset_malformed.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/subset_malformed-9e5cf25f330c1bec)
+
+running 3 tests
+test a_non_string_prefix_is_refused ... ok
+test a_missing_approval_map_is_refused ... ok
+test the_shared_entry_is_accepted ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running tests/validate_bad_names.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/validate_bad_names-55f861f518bd831b)
+
+running 3 tests
+test oversized_case_without_a_tool_call_is_an_error ... ok
+test unmodified_copy_passes ... ok
+test short_and_non_ascii_approval_names_are_errors ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.30s
+
+     Running unittests src/lib.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_core-14cdb7079033db94)
+
+running 9 tests
+test jcs::tests::digest_known ... ok
+test jcs::tests::numbers_es6 ... ok
+test jcs::tests::sorts_keys_and_strips_whitespace ... ok
+test jcs::tests::strings_escape ... ok
+test ledger::tests::replay_and_duplicate ... ok
+test ledger::tests::limits_defaults_and_partial_json ... ok
+test jcs::tests::utf16_key_order ... ok
+test version::tests::major_mismatch_rejected ... ok
+test version::tests::parse_ok_and_bad ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/core.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/core-5d5c00d88d06e004)
+
+running 23 tests
+test error_code_unknown_is_preserved ... ok
+test lifecycle_cannot_skip_the_decision ... ok
+test cancel_only_leaves_requires_approval_and_only_to_denied ... ok
+test exposure_roundtrips_inside_provenance_extensions ... ok
+test envelope_malformed_input ... ok
+test decision_roundtrip_and_unknown_value_is_never_authorized ... ok
+test lifecycle_rejections_and_wrong_request ... ok
+test lifecycle_approval_needs_new_decision_with_approval_id ... ok
+test catalog_digest_is_order_independent ... ok
+test lifecycle_denied_is_terminal_and_unknown_is_denied ... ok
+test other_payloads_roundtrip ... ok
+test lifecycle_continuation_must_cite_the_minted_approval_id ... ok
+test lifecycle_happy_path ... ok
+test trust_levels_and_unknown_values ... ok
+test result_shape_is_pinned ... ok
+test tool_request_roundtrip_const_kind ... ok
+test result_roundtrip_digest_ignores_duration ... ok
+test input_record_examples_roundtrip_and_null_parent_is_explicit ... ok
+test envelope_version_major_mismatch ... ok
+test envelope_positive_roundtrip_and_unknown_fields ... ok
+test envelope_negative_cases ... ok
+test props::id_pattern_matches_reference ... ok
+test props::canonical_parses_back_equal_and_is_stable ... ok
+
+test result: ok. 23 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running unittests src/lib.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_crossaxis-ef0cec01b4ac9fbf)
+
+running 13 tests
+test tests::unknown_is_exact_not_fuzzy ... ok
+test tests::alias_passthrough_and_rename ... ok
+test tests::coercion_records_keys ... ok
+test tests::table_loading_negative_and_numeric_version ... ok
+test tests::measure_counts_bytes ... ok
+test tests::select_max_and_always_include ... ok
+test tests::estimated_tokens_exact_and_differential ... ok
+test tests::measure_bytes_are_wire_bytes_and_tokens_are_absent_without_a_counter ... ok
+test tests::select_domain_match_sorted_deterministic ... ok
+test tests::expand_drops_measure_and_rejects_a_foreign_catalog_and_bad_evidence ... ok
+test tests::expand_adds_records_and_chains_digests ... ok
+test tests::expand_siblings_runtime_disabled_and_discover ... ok
+test tests::expand_refusal_reasons_and_order ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/lib.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_crossveil-58863b3316d55e23)
+
+running 1 test
+test pipeline::tests::retirement_filter_positions_match_the_spec_vector ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/pipeline.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/pipeline-0ae1d1f5f0133b2b)
+
+running 21 tests
+test mock_table_shape ... ok
+test exposure_floor_is_least_trusted_and_unknown_ranks_external ... ok
+test malformed_and_replayed_envelopes_by_value ... ok
+test input_registration_is_not_reachable_from_an_envelope ... ok
+test result_markup_is_data_not_intent ... ok
+test runtime_cannot_return_non_execution_status_from_execute ... ok
+test defaults_are_tool_result_unknown_and_pre_runtime_is_null ... ok
+test events_are_monotonic_and_ordered ... ok
+test stale_table_rejects_before_decide ... ok
+test argument_coercion_happens_before_the_runtime_validates ... ok
+test approval_claims_in_arguments_are_ignored ... ok
+test unknown_decision_is_denied_and_never_executes ... ok
+test exposure_fails_closed_when_ledger_is_empty ... ok
+test request_digest_is_pinned_and_matches_python ... ok
+test continuation_leaves_the_request_ledger_alone_and_feeds_the_exposure_ledger ... ok
+test panic_in_decide_fails_closed ... ok
+test panic_in_execute_is_execution_error ... ok
+test rejected_requests_never_reach_the_runtime ... ok
+test continuation_executes_once_and_never_calls_decide ... ok
+test unreadable_clock_or_expiry_counts_as_expired ... ok
+test per_turn_limit_rejects_the_33rd ... ok
+
+test result: ok. 21 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.04s
+
+     Running tests/refusal_exposure.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/refusal_exposure-90cc273b9b6d5acd)
+
+running 9 tests
+test policy_pin_current_refusal_is_unknown_and_lowers_floor_to_external ... ok
+test refusal_records_have_runtime_parent_and_no_trust_above_the_floor_they_were_made_under ... ok
+test echoed_model_text_in_a_refusal_keeps_its_taint_and_later_effects_stay_held ... ok
+test todo_sequence_floor_before_each_call ... ok
+test refusal_never_raises_the_floor_and_empty_ledger_stays_untrusted ... ok
+test adapter_reason_with_injected_text_is_recorded_and_lowers_the_floor ... ok
+test held_then_approved_then_executed_never_raises_the_floor ... ok
+test chain_of_mixed_refusals_then_untrusted_read_floor_only_falls ... ok
+test documented_rule_every_non_ok_result_is_recorded_unknown_and_counts_external ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.03s
+
+     Running tests/session_limits.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/session_limits-363a5eb5b18b4a87)
+
+running 17 tests
+test defaults ... ok
+test retirement_defaults ... ok
+test input_limit_records_nothing ... ok
+test unknown_close_does_not_poison_the_trace ... ok
+test refused_call_uses_its_request_id ... ok
+test closing_an_unknown_trace_retains_nothing ... ok
+test retired_trace_refuses_continuations ... ok
+test message_limit ... ok
+test zero_filter_bits_refuses_every_new_trace_after_a_retirement ... ok
+test retired_trace_stays_refused ... ok
+test replay_is_still_reported_at_the_message_limit ... ok
+test request_limit_rejects_before_runtime_contact ... ok
+test trace_limit_and_close_frees_a_slot ... ok
+test close_trace ... ok
+test retirement_filter_is_identical_across_sdks ... ok
+test retirement_filter_uses_modulo_at_a_non_power_of_two_size ... ok
+test open_close_cycles_stay_within_the_bound_and_replays_stay_refused ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 53.57s
+
+     Running unittests src/lib.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_lenshift-eaab354bf698cbad)
+
+running 19 tests
+test openai::tests::render_ok_and_error ... ok
+test qwen35::tests::hermes_json_variant ... ok
+test qwen35::tests::reasoning_removed_and_digested ... ok
+test qwen35::tests::json_guess_and_multiline ... ok
+test qwen35::tests::duplicate_key_and_empty_names_are_malformed_not_partial ... ok
+test qwen35::tests::render_wraps_in_tool_response ... ok
+test qwen35::tests::plain_and_unknown_tool_parse_fine ... ok
+test qwen35::tests::multiple_calls_and_indices ... ok
+test aien_legacy::tests::repairs_and_rejections ... ok
+test openai::tests::plain_answer_and_garbage_input ... ok
+test openai::tests::reasoning_and_legacy_function_call ... ok
+test qwen35::tests::truncated_variants_are_partial_and_rejected ... ok
+test qwen35::tests::trailing_text_noted_not_an_error ... ok
+test qwen35::tests::valid_single_call_and_source_digest ... ok
+test tests::tool_names_split_on_last_dot ... ok
+test tests::unknown_dialect_is_unsupported ... ok
+test openai::tests::malformed_arguments_and_missing_name ... ok
+test openai::tests::single_call_with_digest_of_canonical_call ... ok
+test aien_legacy::tests::fence_only_without_tag_and_render_shape ... ok
+
+test result: ok. 19 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/dialect_fixtures.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/dialect_fixtures-0416b79e004d4b44)
+
+running 1 test
+test dialect_fixtures_match ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/provider_replay.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/provider_replay-a8a3d646d336caad)
+
+running 14 tests
+test fixture_discovery_is_recursive ... ok
+test recorded_fixture_keeps_no_real_model_text ... ok
+test replay_output_carries_no_authority ... ok
+test tool_call_serialization_round_trips ... ok
+test drift_in_a_fixture_makes_the_runner_fail ... ok
+test chunk_boundaries_do_not_change_the_outcome ... ok
+test error_statuses_never_yield_calls ... ok
+test replay_is_deterministic ... ok
+test authorization_word_in_model_text_is_not_a_secret ... ok
+test scanner_refuses_the_extra_classes ... ok
+test every_fixture_is_clean_and_replays_to_its_golden ... ok
+test scanner_refuses_each_seeded_secret_class ... ok
+test scrubber_output_passes_the_scanner ... ok
+test scrubber_blanks_model_text_but_keeps_tool_calls ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.59s
+
+     Running unittests src/lib.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_probe-89a204a702f5a056)
+
+running 10 tests
+test tests::http_status_classification ... ok
+test tests::replay_reasoning_json_context_models ... ok
+test tests::profiles_follow_required_probes ... ok
+test tests::chat_and_streaming_verdicts ... ok
+test tests::tool_verdicts ... ok
+test tests::qwen35_text_probe_uses_the_lenshift_parser ... ok
+test tests::urls_and_time ... ok
+test tests::dead_endpoint_fails_closed_never_passes ... ok
+test tests::chat_basic_request_body_is_pinned ... ok
+test tests::full_run_with_canned_endpoint_and_schema_valid_report ... ok
+
+test result: ok. 10 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+     Running unittests src/main.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_probe-fc06a015124d467a)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests interplane_conformance
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests interplane_core
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests interplane_crossaxis
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests interplane_crossveil
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests interplane_lenshift
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Doc-tests interplane_probe
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+   Compiling interplane-conformance v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-conformance)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 2.08s
+     Running unittests src/lib.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_conformance-135f1fb8c2c67c61)
+
+running 2 tests
+test ojson::tests::float_spelling_matches_python_repr ... ok
+test ojson::tests::keeps_key_order_and_python_text ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_conformance-94f8518ee594a30e)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/bin/interplane-corpus.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_corpus-62de0efbe06bc290)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/adapter_runner.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/adapter_runner-30a12c81f5711c19)
+
+running 2 tests
+test toy_reproduction_matches_recorded_verdicts ... ok
+test home_check_matches_recorded_verdicts ... ok
+
+test result: ok. 2 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.80s
+
+     Running tests/default_build.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/default_build-310bc8d21e66a101)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/fixtures.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/fixtures-67655efcf54d3174)
+
+running 6 tests
+test a_vacuous_or_violating_injection_case_fails ... ok
+test comparison_detects_disagreement ... ok
+test expanded_in_capability_is_still_denied_and_a_changed_selection_is_detected ... ok
+test verdicts_are_deterministic ... ok
+test every_fixture_passes ... ok
+test every_injection_fixture_passes_and_is_judged ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.08s
+
+     Running tests/negative_controls.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/negative_controls-5a5a8f36e87a2d12)
+
+running 3 tests
+test variant_names_round_trip ... ok
+test unmodified_runner_passes_everything ... ok
+test every_variant_turns_a_pass_into_a_detected_failure ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 1.45s
+
+     Running tests/schemas.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/schemas-165c31c05f09afc5)
+
+running 4 tests
+test fixture_envelopes_validate ... ok
+test expansion_receipts_and_measure_validate ... ok
+test catalog_selection_and_events_validate ... ok
+test produced_messages_validate ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.24s
+
+     Running tests/subset_malformed.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/subset_malformed-81c1e74c60d2195f)
+
+running 3 tests
+test a_non_string_prefix_is_refused ... ok
+test a_missing_approval_map_is_refused ... ok
+test the_shared_entry_is_accepted ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.15s
+
+     Running tests/validate_bad_names.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/validate_bad_names-e116cde890f93677)
+
+running 3 tests
+test oversized_case_without_a_tool_call_is_an_error ... ok
+test short_and_non_ascii_approval_names_are_errors ... ok
+test unmodified_copy_passes ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.27s
+
+   Doc-tests interplane_conformance
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+call  capability   decision           executed
+c1    web_fetch    authorized         True    
+c2    send_email   denied             False   
+c3    write_file   denied             False   
+c4    append_note  requires_approval  False   
+
+exposure floor after turn 2: external_untrusted
+OK: the injected actions were denied or held; none executed.
+c1 add_item     floor before: user_supplied        decision: authorized         executed: True
+c2 list_items   floor before: user_supplied        decision: authorized         executed: True
+c3 add_item     floor before: workspace_untrusted  decision: requires_approval  executed: False
+c4 delete_item  floor before: external_untrusted   decision: requires_approval  executed: False
+c3 after a person approves: ('authorized', True)
+c4 after a person declines: ('denied', False)
+OK: the host decided every request; the held write ran once after approval, the delete never ran.
+
+thread 'main' (2699101) panicked at crates/interplane-conformance/src/lib.rs:98:13:
+adapter fault in decide
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'main' (2699101) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2699101) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+#    CASE                               RESULT
+01   01-valid-tool-request              PASS
+02   02-malformed-arguments             PASS
+03   03-nonexistent-tool                PASS
+04   04-unknown-capability              PASS
+05   05-policy-denial                   PASS
+06   06-explicit-approval               PASS
+07   07-successful-execution            PASS
+08   08-execution-error                 PASS
+09   09-timeout                         PASS
+10   10-multiple-sequential-calls       PASS
+11   11-model-continuation              PASS
+12   12-unsupported-dialect             PASS
+13   13-unsupported-version             PASS
+14   14-unknown-fields                  PASS
+15   15-oversized-arguments             PASS
+16   16-duplicate-request-ids           PASS
+17   17-replay                          PASS
+18   18-model-retry-after-denial        PASS
+19   19-valid-write-request             PASS
+20   20-missing-required-argument       PASS
+21   21-stale-capability-mapping        PASS
+22   22-untrusted-tool-result           PASS
+23   23-untrusted-memory-result         PASS
+24   24-expansion-requested-excluded    PASS
+25   25-expansion-refused-by-bound      PASS
+26   26-unrecognized-content-kind       PASS
+27   27-absent-null-unrecognized-trust  PASS
+28   28-input-ledger-continues          PASS
+29   29-input-derived-from              PASS
+30   30-input-forged-exposure           PASS
+31   31-source-class-workspace          PASS
+32   32-source-class-web                PASS
+33   33-source-class-memory             PASS
+34   34-source-class-document           PASS
+35   35-source-class-skill              PASS
+36   36-source-class-tool-output        PASS
+37   37-source-class-external-provider  PASS
+38   38-source-class-runtime-generated  PASS
+39   39-source-class-user-request       PASS
+40   40-source-class-model-generated    PASS
+in   injection-01-workspace-write       PASS
+in   injection-02-tool-output-markup    PASS
+in   injection-03-forged-approval-in-arguments PASS
+in   injection-04-workspace-xml-write   PASS
+in   injection-05-workspace-json-delete PASS
+in   injection-06-tool-output-json-email PASS
+in   injection-07-tool-output-plain-write PASS
+in   injection-08-tool-output-nested-result PASS
+in   injection-09-tool-output-error-message PASS
+in   injection-10-memory-xml-write      PASS
+in   injection-11-memory-json-email     PASS
+in   injection-12-memory-plain-delete   PASS
+in   injection-13-web-xml-delete        PASS
+in   injection-14-web-json-email        PASS
+in   injection-15-web-plain-write       PASS
+in   injection-16-document-xml-write    PASS
+in   injection-17-document-json-email   PASS
+in   injection-18-document-plain-delete PASS
+in   injection-19-document-embedded-markup PASS
+in   injection-20-impersonate-system-prompt PASS
+in   injection-21-impersonate-runtime   PASS
+in   injection-22-impersonate-user      PASS
+in   injection-23-forged-approval-in-extensions PASS
+in   injection-24-forged-provenance-in-arguments PASS
+in   injection-25-forged-exposure-in-envelope PASS
+in   injection-26-fake-runtime-approval PASS
+in   injection-27-fake-tool-result      PASS
+in   injection-28-fake-policy-change    PASS
+in   injection-29-retry-new-request-id  PASS
+in   injection-30-retry-fabricated-approval PASS
+in   injection-31-retry-after-requires-approval PASS
+in   injection-32-read-result-steers-to-write PASS
+in   injection-33-tool-description-steers-to-email PASS
+in   injection-34-low-privilege-chain-to-write PASS
+in   injection-35-decision-cites-other-request PASS
+in   injection-36-result-cites-other-request PASS
+in   injection-37-stale-catalog-digest  PASS
+in   injection-38-duplicate-advertised-name PASS
+in   injection-39-decide-raises         PASS
+in   injection-40-execute-raises        PASS
+in   injection-41-denied-call-interleaved PASS
+in   injection-42-rejected-call-interleaved PASS
+in   injection-43-web-effect-held-for-approval PASS
+in   injection-44-memory-effect-held-for-approval PASS
+ap   approval-A01-authorized-continuation PASS
+ap   approval-A02-unminted-approval-id  PASS
+ap   approval-A03-approval-id-of-another-request PASS
+ap   approval-A04-changed-arguments     PASS
+ap   approval-A05-expired               PASS
+ap   approval-A06-second-continuation   PASS
+ap   approval-A07-single-action-reused  PASS
+ap   approval-A08-catalog-changed       PASS
+ap   approval-A09-cancelled             PASS
+ap   approval-A10-model-asserted-approval PASS
+ap   approval-A11-retry-new-request-id  PASS
+ap   approval-A12-after-restart         PASS
+ap   approval-A13-original-envelope-replayed PASS
+ap   approval-A14-unknown-decision-value PASS
+ap   approval-A15-explicit-denied-decision PASS
+ap   approval-A16-decision-cites-other-request PASS
+ap   approval-A17-provider-fails-after-approval PASS
+L    lifecycle/01-forged-approval-id    PASS
+L    lifecycle/02-empty-approval-id     PASS
+L    lifecycle/03-approval-id-from-other-request PASS
+L    lifecycle/04-runtime-minted-approval-id PASS
+L    lifecycle/05-continuation-non-authorized-value PASS
+-    digest/exposure-01                 PASS
+-    digest/input-record-01             PASS
+-    digest/jcs-01                      PASS
+0 of 106 cases failed
+AIEN-OBS conformance_cases 106

@@ -71,7 +71,7 @@ host discovery facts; the digest binds the schemas. Both must match.
 
 The names and renames use existing CrossAxis `MappingTable` without passthrough.
 `catalog.json` and `mapping.json` are existing protocol types, not a new JSON
-wrapper protocol. All arguments are typed: `identifier`, `value` integers and
+wrapper protocol. All arguments are typed: `identifier`, `required_features`, `value` integers and
 `discovery_generation` decimal string (preserves all u64 values in JSON).
 The request id is `hw-<sequence>`. Canonical namespace is `hardware`; names may
 contain dots. Existing JSON-envelope admission supports those names. The current
@@ -116,3 +116,29 @@ immutable-generation storage and native consumer integration remain their owners
 work. No new compiler feature is required for this bounded mapper. Production
 interrupt, DMA, power and timer handlers, timeouts, revocation/lifecycle and
 board-specific providers require separate executable/hardware acceptance.
+
+Run the complete native acceptance and protocol-reference checks with:
+
+```
+bash tests/hardware/verify.sh
+```
+
+The external reference is test infrastructure only; production execution is the
+seed-built ELF. The command executes native cases before consuming their outputs.
+`node tests/hardware/acceptance.mjs` refreshes those outputs on every run; checked
+JSON files alone are not an executable acceptance result. Run all existing gates
+with `bash tests/hardware/existing.sh`; every exit is retained, including failures.
+This requires the same offline Rust cache/sibling pins as the existing gates.
+The new native gate is an explicit command pending compiler distribution into
+the shared Spark test runner; no existing gate or required check was weakened.
+
+Final L558 acceptance: 3462 native behavior cases, 9 transport/fault cases,
+5 compiled mutants detected, 35 existing mapping/authority checks, 7 existing
+gates PASS. See [evidence](../../qualification/evidence/L558/README.md).
+Source coverage and physical gaps: [coverage](../../docs/hardware/COVERAGE.md).
+
+`fixtures.json` retains exact hex input records for all five operations and their
+shared synthetic discovery. It is ordinary contract test data, not a physical
+discovery receipt. `mapping.json` is a template: the host must pin its
+`catalog_digest` to the verified catalog before use. The external reference tests
+do so and compare it with the native output's digest using existing Core rules.

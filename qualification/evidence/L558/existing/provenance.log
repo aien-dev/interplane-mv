@@ -1,0 +1,323 @@
+    Checking typenum v1.20.1
+   Compiling libc v0.2.190
+    Checking subtle v2.6.1
+    Checking zeroize v1.9.1
+    Checking rand_core v0.10.1
+   Compiling getrandom v0.4.3
+    Checking cmov v0.5.4
+    Checking const-oid v0.10.2
+    Checking base64ct v1.8.3
+    Checking cpubits v0.1.1
+    Checking base16ct v1.0.0
+   Compiling num-traits v0.2.19
+    Checking serde_core v1.0.229
+    Checking zmij v1.0.23
+    Checking regex-automata v0.4.18
+    Checking hex v0.4.3
+   Compiling syn v3.0.6
+    Checking ff v0.14.0
+    Checking pem-rfc7468 v1.0.0
+    Checking ctutils v0.4.3
+    Checking group v0.14.0
+    Checking der v0.8.2
+    Checking hybrid-array v0.4.15
+    Checking generic-array v0.14.7
+    Checking block-buffer v0.12.1
+    Checking block-buffer v0.10.4
+    Checking crypto-common v0.1.7
+    Checking spki v0.8.1
+    Checking sec1 v0.8.1
+    Checking digest v0.10.7
+    Checking cpufeatures v0.2.17
+    Checking cpufeatures v0.3.1
+    Checking serde_json v1.0.151
+    Checking regex v1.13.1
+    Checking sha2 v0.10.9
+   Compiling serde_derive v1.0.229
+   Compiling thiserror-impl v2.0.21
+    Checking pkcs8 v0.11.0
+    Checking crypto-common v0.2.2
+    Checking crypto-bigint v0.7.5
+    Checking digest v0.11.3
+    Checking hmac v0.13.0
+    Checking signature v3.0.0
+    Checking sha2 v0.11.0
+    Checking thiserror v2.0.21
+    Checking primefield v0.14.0
+    Checking elliptic-curve v0.14.1
+    Checking rfc6979 v0.6.0
+    Checking serde v1.0.229
+    Checking wnaf v0.14.1
+    Checking primeorder v0.14.0
+    Checking ecdsa v0.17.0
+    Checking interplane-core v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-core)
+    Checking p256 v0.14.0
+    Checking interplane-lenshift v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-lenshift)
+    Checking interplane-provenance v0.0.1 (/home/drakestapleton/workspace/interplane-chipsets-L558/provenance)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 2.64s
+   Compiling typenum v1.20.1
+   Compiling subtle v2.6.1
+   Compiling zeroize v1.9.1
+   Compiling rand_core v0.10.1
+   Compiling cmov v0.5.4
+   Compiling const-oid v0.10.2
+   Compiling base64ct v1.8.3
+   Compiling cpubits v0.1.1
+   Compiling base16ct v1.0.0
+   Compiling libc v0.2.190
+   Compiling regex-automata v0.4.18
+   Compiling num-traits v0.2.19
+   Compiling hex v0.4.3
+   Compiling serde v1.0.229
+   Compiling thiserror v2.0.21
+   Compiling ctutils v0.4.3
+   Compiling ff v0.14.0
+   Compiling group v0.14.0
+   Compiling pem-rfc7468 v1.0.0
+   Compiling der v0.8.2
+   Compiling hybrid-array v0.4.15
+   Compiling generic-array v0.14.7
+   Compiling getrandom v0.4.3
+   Compiling cpufeatures v0.2.17
+   Compiling cpufeatures v0.3.1
+   Compiling block-buffer v0.10.4
+   Compiling crypto-common v0.1.7
+   Compiling crypto-common v0.2.2
+   Compiling block-buffer v0.12.1
+   Compiling crypto-bigint v0.7.5
+   Compiling digest v0.10.7
+   Compiling sha2 v0.10.9
+   Compiling spki v0.8.1
+   Compiling sec1 v0.8.1
+   Compiling pkcs8 v0.11.0
+   Compiling digest v0.11.3
+   Compiling hmac v0.13.0
+   Compiling signature v3.0.0
+   Compiling sha2 v0.11.0
+   Compiling regex v1.13.1
+   Compiling interplane-core v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-core)
+   Compiling primefield v0.14.0
+   Compiling elliptic-curve v0.14.1
+   Compiling rfc6979 v0.6.0
+   Compiling wnaf v0.14.1
+   Compiling primeorder v0.14.0
+   Compiling ecdsa v0.17.0
+   Compiling interplane-lenshift v0.3.0 (/home/drakestapleton/workspace/interplane-chipsets-L558/rust/crates/interplane-lenshift)
+   Compiling p256 v0.14.0
+   Compiling interplane-provenance v0.0.1 (/home/drakestapleton/workspace/interplane-chipsets-L558/provenance)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 3.58s
+     Running unittests src/lib.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_provenance-18556558c15d98db)
+
+running 3 tests
+test gojson::tests::compact_keeps_string_bytes_and_order ... ok
+test gojson::tests::member_is_top_level_only ... ok
+test strict::tests::duplicate_keys_are_refused_at_any_depth ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running unittests src/main.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_provenance-cb25deece565900a)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/effect_binding.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/effect_binding-28cd2dd599353646)
+
+running 32 tests
+test compact_sorted_equals_serde_json_to_vec_for_integer_values ... ok
+test approval_binding_bytes_are_the_daemons_sorted_compact_object ... ok
+test altered_record_without_restamp_is_a_digest_mismatch ... ok
+test load_log_for_another_model_than_the_export ... ok
+test float_arguments_are_refused_not_approximated ... ok
+test altered_committed ... ok
+test effect_from_a_different_executable_than_the_aien_link ... ok
+test interplane_result_names_other_ledger_records ... ok
+test receipt_hashed_in_the_jcs_form_is_refused_by_name ... ok
+test claim_for_another_trace_than_its_grant ... ok
+test altered_grant ... ok
+test effect_from_a_daemon_that_bound_another_socket_than_the_load_log ... ok
+test altered_claim ... ok
+test ledger_slice_is_labelled_strong ... ok
+test interplane_arguments_differ_from_what_the_daemon_approved ... ok
+test receipt_in_the_producer_form_is_accepted_where_jcs_would_differ ... ok
+test ledger_record_removed_from_the_manifest ... ok
+test receipt_declared_in_the_jcs_form_is_refused ... ok
+test committed_for_another_claim ... ok
+test ledger_for_another_request_than_the_link_names ... ok
+test altered_intent ... ok
+test verifying_reads_and_changes_nothing ... ok
+test records_out_of_ledger_order ... ok
+test record_effect_receipt_v1_is_still_accepted_and_labelled_weaker ... ok
+test effect_from_a_different_daemon_process_than_the_one_that_loaded_the_model ... ok
+test record_the_daemon_did_not_verify ... ok
+test ledger_from_another_trace ... ok
+test altered_ack ... ok
+test weaker_receipt_cannot_tell_two_identical_calls_apart_and_says_so ... ok
+test unknown_effect_binding_is_refused ... ok
+test two_identical_calls_in_two_traces_are_told_apart ... ok
+test two_identical_calls_in_one_trace_are_told_apart ... ok
+
+test result: ok. 32 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.07s
+
+     Running tests/evaluation.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/evaluation-6a1a90070ff19ca4)
+
+running 17 tests
+test spark_rsi_receipt_with_any_field_changed_fails ... ok
+test baseline_bundle_verifies_without_evaluation ... ok
+test a_supplied_key_requires_an_evaluation ... ok
+test without_a_key_an_evaluation_is_untrusted ... ok
+test a_subject_under_a_protected_path_is_refused ... ok
+test a_receipt_judged_from_another_commit_is_refused ... ok
+test the_operator_can_pin_the_policy ... ok
+test a_holdout_set_other_than_the_pinned_one_is_refused ... ok
+test malformed_and_unsupported_receipts_are_refused ... ok
+test version_1_receipts_are_insufficient ... ok
+test judged_bundle_passes_with_the_pinned_key ... ok
+test spark_rsi_receipt_verifies_byte_for_byte ... ok
+test wrong_keys_are_refused ... ok
+test a_genuine_receipt_for_other_bytes_is_a_substituted_change ... ok
+test below_threshold_or_not_admitted_is_refused ... ok
+test altered_policies_are_refused ... ok
+test substituted_scores_break_the_signature ... ok
+
+test result: ok. 17 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.12s
+
+     Running tests/fix_the_test.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/fix_the_test-d81ca295ad0e3545)
+
+running 31 tests
+test forged_native_sha_differing_from_the_recall_is_contradicted ... ok
+test stderr_digest_claimed_but_stderr_file_missing_is_refused ... ok
+test stderr_digest_claimed_but_stderr_not_retained_is_refused ... ok
+test forged_native_true_against_a_stub_recall_is_contradicted ... ok
+test absent_native_field_is_labelled_missing_never_complete ... ok
+test native_claimed_false_is_labelled_missing ... ok
+test committed_fixture_is_labelled_incomplete_with_native_proven ... ok
+test committed_fixture_matches_the_generator ... ok
+test forged_native_true_with_no_recall_report_is_contradicted ... ok
+test dropped_test_run_section_is_test_run_missing ... ok
+test declaring_native_missing_is_required_to_match ... ok
+test argv_other_than_the_task_command_is_a_test_run_mismatch ... ok
+test swapped_stdout_digest_is_a_test_run_mismatch ... ok
+test changed_exit_code_is_a_test_run_mismatch ... ok
+test stdout_digest_claimed_but_stdout_not_retained_is_refused ... ok
+test dropped_test_run_record_is_test_run_missing ... ok
+test intact_stderr_still_passes ... ok
+test native_false_while_the_recall_says_native_is_contradicted ... ok
+test malformed_native_is_malformed ... ok
+test stderr_altered_by_one_byte_is_refused ... ok
+test verifying_the_slice_changes_nothing ... ok
+test tampered_source_pin_blob_is_a_source_pin_mismatch ... ok
+test task_id_disagreement_is_a_test_run_mismatch ... ok
+test swapped_stdout_file_is_a_test_run_mismatch ... ok
+test test_that_already_passed_before_the_fix_is_refused ... ok
+test write_outside_the_task_target_is_a_task_scope_mismatch ... ok
+test test_run_needs_the_strong_ledger_binding ... ok
+test task_without_a_target_path_is_a_task_scope_mismatch ... ok
+test unsupported_test_run_binding_or_version_is_refused ... ok
+test tampered_source_pin_path_and_commit_are_source_pin_mismatches ... ok
+test wrong_target_blob_after_is_a_test_run_mismatch ... ok
+
+test result: ok. 31 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/model_turn_link.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/model_turn_link-c9b203a3d2f7757c)
+
+running 11 tests
+test request_bytes_changed_after_the_digest_was_named_are_refused ... ok
+test a_turn_for_other_bytes_does_not_chain_to_the_effect ... ok
+test a_response_that_is_not_the_named_response_is_refused ... ok
+test a_request_record_that_is_not_listed_is_refused ... ok
+test a_model_turn_that_chains_by_digest_is_complete ... ok
+test a_request_that_is_not_a_messages_array_is_refused ... ok
+test the_version_one_turn_keeps_its_old_checks_and_is_not_read_as_having_the_new_links ... ok
+test a_backend_the_load_log_does_not_name_is_refused ... ok
+test weights_digest_not_the_exported_file_is_refused ... ok
+test times_out_of_order_or_after_the_request_are_refused ... ok
+test a_missing_model_turn_is_a_refusal_and_a_scripted_one_is_labelled_incomplete ... ok
+
+test result: ok. 11 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
+     Running tests/real_chain.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/real_chain-7a11e0f8f2556fbf)
+
+running 16 tests
+test real_chain_records_are_real_daemon_output ... ok
+test real_chain_is_complete_because_every_link_is_verified_from_retained_bytes ... ok
+test the_driver_asserted_generation_origin_is_superseded ... ok
+test a_generation_record_that_is_not_the_one_the_daemon_returned_is_refused ... ok
+test a_generation_record_must_precede_the_effect ... ok
+test the_generated_text_must_be_the_text_the_dialect_parsed ... ok
+test a_consistently_rewritten_turn_and_record_still_has_to_match_the_trace_request ... ok
+test a_record_from_another_daemon_is_refused ... ok
+test a_scripted_turn_is_never_complete ... ok
+test a_record_for_another_model_or_tokenizer_is_refused ... ok
+test proposal_origin_must_be_stated_and_unknown_origins_are_refused ... ok
+test a_missing_generation_record_is_an_absent_claim_not_a_pass ... ok
+test an_altered_daemon_identity_trace_or_weights_is_refused ... ok
+test an_altered_generation_record_is_refused_whatever_field_changes ... ok
+test an_altered_ledger_record_of_each_type_is_refused ... ok
+test a_malformed_generation_record_is_refused ... ok
+
+test result: ok. 16 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.78s
+
+     Running tests/recovery_verdicts.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/recovery_verdicts-a847dea018267f4f)
+
+running 6 tests
+test test_records_without_a_section_on_an_unlanded_effect_are_still_refused_as_such ... ok
+test synthetic_slice_has_the_same_three_refusals ... ok
+test a_test_run_on_top_of_an_unlanded_effect_is_refused ... ok
+test an_interrupted_bundle_still_needs_its_earlier_records_to_agree ... ok
+test an_unknown_ack_state_is_still_a_generic_mismatch ... ok
+test real_slice_done_is_pass_complete_and_the_three_unlanded_cases_are_not ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.27s
+
+     Running tests/review_hardening.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/review_hardening-5fab7bb2f180d4c4)
+
+running 9 tests
+test a_duplicate_key_in_the_manifest_is_refused ... ok
+test a_symlinked_record_or_directory_is_refused ... ok
+test a_non_boolean_retained_flag_is_refused ... ok
+test a_repeated_candidate_manifest_key_is_refused ... ok
+test a_duplicate_key_in_a_record_is_refused ... ok
+test the_real_chain_names_its_missing_candidate_on_the_verdict_line ... ok
+test a_duplicate_key_inside_a_ledger_note_is_refused ... ok
+test a_result_after_the_final_one_is_refused ... ok
+test test_material_never_verifies_as_complete ... ok
+
+test result: ok. 9 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.20s
+
+     Running tests/verdicts.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/verdicts-0b2ddb939c126974)
+
+running 24 tests
+test missing_bom_in_archive_declared_complete ... ok
+test changed_manifest_metadata ... ok
+test missing_bom_labelled_record_but_archive_claims_complete ... ok
+test missing_bom_labelled_with_wrong_hash ... ok
+test changed_weight_bytes ... ok
+test sealed_manifest_is_never_rewritten ... ok
+test changed_license_metadata_with_restamped_manifest ... ok
+test truncated_manifest_write ... ok
+test export_weights_not_derived_from_trained_run ... ok
+test real_waldo_export_is_labelled_incomplete ... ok
+test truncated_record_write ... ok
+test config_vocab_disagrees_with_tokenizer ... ok
+test tokenizer_swapped_and_restamped ... ok
+test changed_weight_bytes_with_restamped_manifest ... ok
+test real_load_log_for_other_model_bytes_is_refused ... ok
+test receipt_claimed_for_another_trace ... ok
+test receipt_for_another_request_substituted ... ok
+test candidate_claim_without_manifest_is_refused ... ok
+test load_claim_on_export_aien_cannot_load ... ok
+test missing_bom_correctly_labelled_incomplete ... ok
+test synthetic_fixtures_are_reproducible_byte_for_byte ... ok
+test real_waldo_tokenizer_json_loaded_by_aien_is_labelled_incomplete ... ok
+test unknown_lineage_cannot_carry_training_records ... ok
+test valid_self_contained_archive ... ok
+
+test result: ok. 24 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+   Doc-tests interplane_provenance
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+

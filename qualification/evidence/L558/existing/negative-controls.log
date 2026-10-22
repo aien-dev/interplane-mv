@@ -1,0 +1,79 @@
+TRUST-DIGEST.txt matches
+--variant and --matrix need a build with the test-only `negative-controls` feature
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:98:13:
+adapter fault in decide
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:98:13:
+adapter fault in decide
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:98:13:
+adapter fault in decide
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:98:13:
+adapter fault in decide
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:98:13:
+adapter fault in decide
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:98:13:
+adapter fault in decide
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:98:13:
+adapter fault in decide
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:98:13:
+adapter fault in decide
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+
+thread 'main' (2714859) panicked at crates/interplane-conformance/src/lib.rs:125:13:
+adapter fault in execute
+negative-control matrix valid: true

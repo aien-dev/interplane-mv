@@ -53,9 +53,10 @@ ships here). It is history and is no longer updated; the Rust column is the curr
 | CI | running | - | - | github.com/aien-spark/interplane: schemas and fixtures, rust (verdicts equal the recorded reference), package, negative controls, provenance, AIEN adapter, no tracked Python |
 
 L558 additive hardware domain: handwritten seeded-Omega executable mapper for a
-narrow QEMU-virt standards fixture, five canonical capability classes. Native
-behavior and existing CrossAxis/Crossveil test receipts are under
-`qualification/evidence/L558`; exact status is recorded there. Production Aienux
+narrow QEMU-virt standards fixture, five canonical capability classes. HOST-TESTED:
+3462 native behavior cases, 9 transport/fault checks, 5 compiled mutants caught,
+35 existing CrossAxis/Crossveil checks, all 7 existing gates PASS. Receipts under
+`qualification/evidence/L558`. Independent review pending. QEMU guest NOT_RUN. Production Aienux
 consumer integration pending; all physical targets NOT_TESTED. No existing
 runtime authority or language-migration ownership changed. See
 `omega/hardware/README.md` for interface and boundaries.

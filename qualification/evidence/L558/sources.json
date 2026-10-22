@@ -1,0 +1,36 @@
+{
+  "accessed": "2026-10-22",
+  "classification": "SOURCE-VERIFIED describes contracts only; all physical targets NOT_TESTED",
+  "research_archive": {
+    "path": "/home/drakestapleton/handoffs/L557-source-archive.tar.gz",
+    "sha256": "f6cd60015a28a64f1dc6d3e8b2a25aa4c41be728158590a2b9e0d07ab3e7e03c"
+  },
+  "research_inputs": [
+    {
+      "path": "docs/hardware/research/L557-arm-interface-research.md",
+      "sha256": "223d8684b1b848cd3964066731643d653fc5650e5fe73a45034902e233e0586e"
+    },
+    {
+      "path": "docs/hardware/research/L557-interface-matrix.json",
+      "sha256": "bf4f0f0bb82db2f83aa3de018bec983292c6c61e37cfa77a57a5f236de54b898"
+    },
+    {
+      "path": "docs/hardware/research/L557-sources.json",
+      "sha256": "9d91ee531b7b0ecf4825d2faf0d4b61c58ba987d659adde72269d62233bcd751"
+    }
+  ],
+  "implementation_sources": [
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/a1c2b1da93f5f612aa7a33190c4900c98e51f6da/drivers/irqchip/irq-gic-v3.c",
+      "sha256": "8e2a7ce97bf52a1ade7a7ce89d75399b03aa2c96a4101710605434fb83b60dad"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/a1c2b1da93f5f612aa7a33190c4900c98e51f6da/arch/arm64/tools/sysreg",
+      "sha256": "45ca1a6e246ee73670b41f05722460cdebdccf8a09d5e4d1ef6bdec662f9effd"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/torvalds/linux/a1c2b1da93f5f612aa7a33190c4900c98e51f6da/include/uapi/linux/psci.h",
+      "sha256": "b3af5fddb5ee0c426f9af13a51a3df3b338fa37540eed69524f65573f895aea1"
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+[
+  {
+    "name": "discovery-binding",
+    "compile_exit": 0,
+    "behavior_exit": 1,
+    "source_sha256": "ff0571898c746bed1de145b1f7b59c9cf9a6391f65d4ee292bbfeea4d588f672",
+    "executable_sha256": "61f0567787065cdad71b2257044fed7eb827c2182eddead31c5d281c74b135a4"
+  },
+  {
+    "name": "dma-isolation",
+    "compile_exit": 0,
+    "behavior_exit": 1,
+    "source_sha256": "69ca1fdb07b01861c3aa260b6990b032642b0d4ed14d30191494c8ba7a7ff731",
+    "executable_sha256": "acd46b0c3df268283c1fb5b6d2513debc714a17dd277f7af4b235f4142c47bbb"
+  },
+  {
+    "name": "timer-range",
+    "compile_exit": 0,
+    "behavior_exit": 1,
+    "source_sha256": "5c2ee6ed0c8d60c5092e8769c899a1a23dfde419ed265b38d8d716ccf98cd22e",
+    "executable_sha256": "7b6ac95b711c28e18da53963b2a908ab9142a13cbe3e6b67b7c96f1dc8d38ab3"
+  },
+  {
+    "name": "coherency",
+    "compile_exit": 0,
+    "behavior_exit": 1,
+    "source_sha256": "e95201f94e9e63d5b0b35457ca33421b1fd7078c326593b7ae58c5c095233c11",
+    "executable_sha256": "09c688995cf98e9aec4ef3ead8a80c89fde2498aa15e94db0bb739796ab117ce"
+  },
+  {
+    "name": "vendor",
+    "compile_exit": 0,
+    "behavior_exit": 1,
+    "source_sha256": "6f4a44b3e371c8507d1c100860a47ebf1e278eedbafc95fe13ca9cc05341fcd6",
+    "executable_sha256": "a3e66e65c1213571a71576e8618d5a21a7b2f20a5152a376a51c682938d1dc65"
+  }
+]

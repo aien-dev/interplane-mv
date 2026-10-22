@@ -1,0 +1,573 @@
+AIEN-OBS sibling_aegis_runtime_commit "e8eed5aac8612c1b846284c09d58e798e382c11b"
+AIEN-OBS sibling_aien_protocols_commit "1554330b403a78c4998d4cdbb841fb5457eb09ba"
+aegis-runtime @ f4e870953a466bb1cf68f1d88285929024cf1ba9
+aien-protocols @ 3a4cdbe8d360a2e1ddb3e8b108684048b9d4ba10
+AIEN-OBS aegis_runtime_pin "f4e870953a466bb1cf68f1d88285929024cf1ba9"
+AIEN-OBS aien_protocols_pin "3a4cdbe8d360a2e1ddb3e8b108684048b9d4ba10"
+    Checking memchr v2.8.3
+   Compiling serde_core v1.0.229
+    Checking smallvec v1.16.2
+    Checking pin-project-lite v0.2.17
+   Compiling serde v1.0.229
+    Checking futures-core v0.3.34
+    Checking bytes v1.12.1
+   Compiling serde_json v1.0.151
+   Compiling syn v3.0.6
+    Checking libc v0.2.190
+   Compiling syn v2.0.119
+    Checking hybrid-array v0.4.15
+    Checking futures-sink v0.3.34
+    Checking ctutils v0.4.2
+    Checking log v0.4.34
+   Compiling find-msvc-tools v0.1.14
+   Compiling shlex v2.0.1
+    Checking tracing-core v0.1.36
+    Checking futures-io v0.3.34
+    Checking futures-task v0.3.34
+    Checking slab v0.4.12
+    Checking der v0.8.2
+    Checking futures-channel v0.3.34
+   Compiling thiserror v1.0.69
+    Checking sha1_smol v1.0.1
+   Compiling httparse v1.10.1
+   Compiling cc v1.6.0
+    Checking zerocopy v0.8.59
+    Checking tower-service v0.3.3
+    Checking icu_normalizer_data v2.3.0
+    Checking icu_properties_data v2.3.0
+    Checking aho-corasick v1.1.5
+    Checking form_urlencoded v1.2.2
+    Checking http v1.5.0
+    Checking base64 v0.23.1
+    Checking tower-layer v0.3.3
+    Checking try-lock v0.2.5
+    Checking sync_wrapper v1.0.2
+    Checking ryu v1.0.23
+    Checking atomic-waker v1.1.2
+    Checking httpdate v1.0.3
+   Compiling rustls v0.23.45
+    Checking want v0.3.1
+    Checking ipnet v2.12.2
+   Compiling ahash v0.8.12
+   Compiling strsim v0.11.1
+    Checking block-buffer v0.12.1
+   Compiling ident_case v1.0.1
+    Checking iana-time-zone v0.1.65
+   Compiling pkg-config v0.3.34
+    Checking utf8parse v0.2.2
+   Compiling rustversion v1.0.23
+   Compiling vcpkg v0.2.15
+   Compiling zmij v1.0.23
+    Checking getrandom v0.4.3
+    Checking cpufeatures v0.2.17
+    Checking parking_lot_core v0.9.12
+    Checking errno v0.3.14
+    Checking socket2 v0.6.5
+    Checking mio v1.2.4
+    Checking signal-hook-registry v1.4.8
+    Checking sha2 v0.10.9
+    Checking getrandom v0.2.17
+    Checking crypto-common v0.2.2
+    Checking crypto-bigint v0.7.5
+    Checking http-body v1.1.0
+    Checking spki v0.8.0
+    Checking sec1 v0.8.1
+    Checking parking_lot v0.12.5
+    Checking regex-automata v0.4.18
+    Checking cpufeatures v0.3.1
+    Checking http-body-util v0.1.5
+    Checking rand_core v0.6.4
+    Checking pkcs8 v0.11.0
+    Checking sha1 v0.10.7
+    Checking anstyle-parse v1.0.0
+    Checking anstyle-query v1.1.5
+   Compiling time-core v0.1.9
+    Checking anstyle v1.0.14
+    Checking is_terminal_polyfill v1.70.2
+    Checking colorchoice v1.0.5
+    Checking utf-8 v0.7.6
+    Checking data-encoding v2.11.1
+   Compiling itoa v1.0.18
+    Checking byteorder v1.5.0
+   Compiling num-conv v0.2.2
+    Checking csv-core v0.1.13
+    Checking digest v0.11.3
+    Checking anstream v1.0.0
+   Compiling time-macros v0.2.32
+    Checking dyn-clone v1.0.20
+   Compiling anyhow v1.0.104
+   Compiling heck v0.5.0
+   Compiling rmcp v3.4.0
+    Checking deranged v0.5.8
+    Checking hmac v0.13.0
+    Checking signature v3.0.0
+    Checking sha2 v0.11.0
+    Checking equivalent v1.0.2
+    Checking mime v0.3.17
+    Checking clap_lex v1.1.1
+    Checking powerfmt v0.2.0
+    Checking hashbrown v0.17.1
+    Checking sharded-slab v0.1.7
+    Checking tracing-log v0.2.0
+    Checking clap_builder v4.6.7
+    Checking bitflags v2.13.2
+    Checking uuid v1.27.0
+    Checking serde_path_to_error v0.1.20
+    Checking csv v1.4.0
+   Compiling ring v0.17.14
+   Compiling libsqlite3-sys v0.28.0
+    Checking thread_local v1.1.10
+    Checking matchit v0.7.3
+    Checking fallible-streaming-iterator v0.1.9
+    Checking nu-ansi-term v0.50.3
+   Compiling pastey v0.2.3
+    Checking fallible-iterator v0.3.0
+   Compiling aegis v0.2.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aegis-runtime)
+    Checking aien-capability v0.1.0 (https://github.com/aien-dev/aien-sovereign-core.git?rev=9b5e6e82359f4ad6b6f03042e83ef6411c5f15ce#9b5e6e82)
+   Compiling synstructure v0.14.0
+   Compiling darling_core v0.24.1
+   Compiling serde_derive_internals v0.30.0
+    Checking indexmap v2.14.2
+    Checking libloading v0.8.9
+    Checking rustix v1.1.5
+    Checking elliptic-curve v0.14.1
+    Checking primefield v0.14.0
+    Checking rfc6979 v0.6.0
+    Checking wnaf v0.14.1
+warning: aegis@0.2.0: mojo binary not found on PATH, skipping libaegis_simd.so build
+    Checking regex v1.13.1
+    Checking matchers v0.2.0
+    Checking time v0.3.55
+    Checking primeorder v0.14.0
+    Checking ecdsa v0.17.0
+    Checking ppv-lite86 v0.2.21
+   Compiling serde_derive v1.0.229
+   Compiling zerofrom-derive v0.1.8
+   Compiling yoke-derive v0.8.4
+   Compiling zerovec-derive v0.11.6
+   Compiling tokio-macros v2.7.2
+   Compiling futures-macro v0.3.34
+   Compiling displaydoc v0.2.7
+   Compiling async-trait v0.1.92
+   Compiling thiserror-impl v2.0.21
+   Compiling ref-cast-impl v1.0.27
+    Checking rand_chacha v0.3.1
+   Compiling tracing-attributes v0.1.31
+   Compiling thiserror-impl v1.0.69
+    Checking p256 v0.14.0
+    Checking hashbrown v0.14.5
+    Checking rand v0.8.8
+   Compiling schemars_derive v1.2.2
+    Checking hashlink v0.9.1
+    Checking ref-cast v1.0.27
+   Compiling axum-macros v0.4.2
+   Compiling clap_derive v4.6.7
+    Checking tempfile v3.27.0
+    Checking tokio v1.53.2
+    Checking futures-util v0.3.34
+    Checking tracing v0.1.44
+    Checking zerofrom v0.1.8
+    Checking yoke v0.8.3
+   Compiling darling_macro v0.24.1
+    Checking tower-http v0.5.2
+    Checking tracing-subscriber v0.3.23
+    Checking thiserror v2.0.21
+    Checking zerovec v0.11.8
+    Checking zerotrie v0.2.5
+    Checking tungstenite v0.24.0
+    Checking clap v4.6.7
+    Checking tinystr v0.8.4
+    Checking potential_utf v0.1.6
+   Compiling darling v0.24.1
+    Checking aien-protocol-types v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-protocol-types)
+    Checking chrono v0.4.45
+    Checking serde_urlencoded v0.7.1
+    Checking interplane-core v0.3.0 (/tmp/tmp.Bnb7sgz5s5/interplane/rust/crates/interplane-core)
+    Checking icu_collections v2.3.0
+   Compiling rmcp-macros v3.4.0
+    Checking icu_locale_core v2.3.0
+    Checking rustls-webpki v0.103.15
+    Checking aien-provenance v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-provenance)
+    Checking aien-action-protocol v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-action-protocol)
+    Checking aien-inference-protocol v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-inference-protocol)
+    Checking aien-evaluation-protocol v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-evaluation-protocol)
+    Checking icu_provider v2.3.1
+    Checking futures-executor v0.3.34
+    Checking axum-core v0.4.5
+    Checking schemars v1.2.2
+    Checking futures v0.3.34
+    Checking icu_normalizer v2.3.0
+    Checking icu_properties v2.3.0
+    Checking aien-agent-state-abi v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-agent-state-abi)
+    Checking interplane-lenshift v0.3.0 (/tmp/tmp.Bnb7sgz5s5/interplane/rust/crates/interplane-lenshift)
+    Checking interplane-crossaxis v0.3.0 (/tmp/tmp.Bnb7sgz5s5/interplane/rust/crates/interplane-crossaxis)
+    Checking interplane-crossveil v0.3.0 (/tmp/tmp.Bnb7sgz5s5/interplane/rust/crates/interplane-crossveil)
+    Checking interplane-provenance v0.0.1 (/tmp/tmp.Bnb7sgz5s5/interplane/provenance)
+    Checking idna_adapter v1.2.2
+    Checking idna v1.1.0
+    Checking tokio-util v0.7.19
+    Checking hyper v1.11.1
+    Checking tower v0.5.3
+    Checking tokio-tungstenite v0.24.0
+    Checking interplane-conformance v0.3.0 (/tmp/tmp.Bnb7sgz5s5/interplane/rust/crates/interplane-conformance)
+    Checking url v2.5.8
+    Checking tower-http v0.6.11
+    Checking tokio-stream v0.1.19
+    Checking tokio-rustls v0.26.6
+    Checking hyper-util v0.1.21
+    Checking rusqlite v0.31.0
+    Checking hyper-rustls v0.27.10
+    Checking axum v0.7.9
+    Checking reqwest v0.12.28
+    Checking aien-probe v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-probe)
+    Checking aien-inference-client v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-inference-client)
+    Checking aien-mcp v0.1.0 (https://github.com/aien-dev/aien-sovereign-core.git?rev=9b5e6e82359f4ad6b6f03042e83ef6411c5f15ce#9b5e6e82)
+    Checking interplane-adapter-aien v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane/adapters/aien)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 8.49s
+   Compiling memchr v2.8.3
+   Compiling zeroize v1.9.0
+   Compiling smallvec v1.16.2
+   Compiling pin-project-lite v0.2.17
+   Compiling bytes v1.12.1
+   Compiling futures-core v0.3.34
+   Compiling futures-sink v0.3.34
+   Compiling serde_core v1.0.229
+   Compiling ctutils v0.4.2
+   Compiling log v0.4.34
+   Compiling getrandom v0.4.3
+   Compiling errno v0.3.14
+   Compiling socket2 v0.6.5
+   Compiling mio v1.2.4
+   Compiling zerofrom v0.1.8
+   Compiling tracing-core v0.1.36
+   Compiling futures-io v0.3.34
+   Compiling futures-task v0.3.34
+   Compiling slab v0.4.12
+   Compiling sha2 v0.10.9
+   Compiling futures-channel v0.3.34
+   Compiling getrandom v0.2.17
+   Compiling hybrid-array v0.4.15
+   Compiling signal-hook-registry v1.4.8
+   Compiling yoke v0.8.3
+   Compiling parking_lot_core v0.9.12
+   Compiling der v0.8.2
+   Compiling thiserror v1.0.69
+   Compiling sha1_smol v1.0.1
+   Compiling tower-service v0.3.3
+   Compiling httparse v1.10.1
+   Compiling cpufeatures v0.3.1
+   Compiling form_urlencoded v1.2.2
+   Compiling rustls-pki-types v1.15.1
+   Compiling zerovec v0.11.8
+   Compiling futures-util v0.3.34
+   Compiling zerotrie v0.2.5
+   Compiling http v1.5.0
+   Compiling aho-corasick v1.1.5
+   Compiling base64 v0.23.1
+   Compiling tracing v0.1.44
+   Compiling tower-layer v0.3.3
+   Compiling crypto-common v0.2.2
+   Compiling block-buffer v0.12.1
+   Compiling parking_lot v0.12.5
+   Compiling crypto-bigint v0.7.5
+   Compiling try-lock v0.2.5
+   Compiling untrusted v0.9.0
+   Compiling strsim v0.11.1
+   Compiling thiserror v2.0.21
+   Compiling want v0.3.1
+   Compiling sync_wrapper v1.0.2
+   Compiling ryu v1.0.23
+   Compiling atomic-waker v1.1.2
+   Compiling httpdate v1.0.3
+   Compiling tokio v1.53.2
+   Compiling tinystr v0.8.4
+   Compiling potential_utf v0.1.6
+   Compiling ring v0.17.14
+   Compiling ipnet v2.12.2
+   Compiling rand_core v0.6.4
+   Compiling ppv-lite86 v0.2.21
+   Compiling iana-time-zone v0.1.65
+   Compiling darling_core v0.24.1
+   Compiling webpki-roots v1.0.9
+   Compiling icu_locale_core v2.3.0
+   Compiling icu_collections v2.3.0
+   Compiling http-body v1.1.0
+   Compiling utf8parse v0.2.2
+   Compiling ahash v0.8.12
+   Compiling rand_chacha v0.3.1
+   Compiling spki v0.8.0
+   Compiling sec1 v0.8.1
+   Compiling http-body-util v0.1.5
+   Compiling anstyle-parse v1.0.0
+   Compiling sha1 v0.10.7
+   Compiling anstyle v1.0.14
+   Compiling digest v0.11.3
+   Compiling pkcs8 v0.11.0
+   Compiling regex-automata v0.4.18
+   Compiling hmac v0.13.0
+   Compiling signature v3.0.0
+   Compiling sha2 v0.11.0
+   Compiling rand v0.8.8
+   Compiling is_terminal_polyfill v1.70.2
+   Compiling colorchoice v1.0.5
+   Compiling serde v1.0.229
+   Compiling serde_json v1.0.151
+   Compiling bitflags v2.13.2
+   Compiling uuid v1.27.0
+   Compiling icu_provider v2.3.1
+   Compiling rustls-webpki v0.103.15
+   Compiling utf-8 v0.7.6
+   Compiling data-encoding v2.11.1
+   Compiling byteorder v1.5.0
+   Compiling anstyle-query v1.1.5
+   Compiling time-core v0.1.9
+   Compiling num-conv v0.2.2
+   Compiling anstream v1.0.0
+   Compiling icu_normalizer v2.3.0
+   Compiling icu_properties v2.3.0
+   Compiling futures-executor v0.3.34
+   Compiling tungstenite v0.24.0
+   Compiling time-macros v0.2.32
+   Compiling serde_urlencoded v0.7.1
+   Compiling chrono v0.4.45
+   Compiling rustls v0.23.45
+   Compiling ref-cast v1.0.27
+   Compiling hashbrown v0.14.5
+   Compiling csv-core v0.1.13
+   Compiling deranged v0.5.8
+   Compiling equivalent v1.0.2
+   Compiling mime v0.3.17
+   Compiling clap_lex v1.1.1
+   Compiling idna_adapter v1.2.2
+   Compiling powerfmt v0.2.0
+   Compiling idna v1.1.0
+   Compiling aien-protocol-types v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-protocol-types)
+   Compiling dyn-clone v1.0.20
+   Compiling hashbrown v0.17.1
+   Compiling hashlink v0.9.1
+   Compiling clap_builder v4.6.7
+   Compiling axum-core v0.4.5
+   Compiling url v2.5.8
+   Compiling sharded-slab v0.1.7
+   Compiling csv v1.4.0
+   Compiling elliptic-curve v0.14.1
+   Compiling primefield v0.14.0
+   Compiling rfc6979 v0.6.0
+   Compiling schemars v1.2.2
+   Compiling wnaf v0.14.1
+   Compiling regex v1.13.1
+   Compiling time v0.3.55
+   Compiling indexmap v2.14.2
+   Compiling matchers v0.2.0
+   Compiling aien-action-protocol v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-action-protocol)
+   Compiling libsqlite3-sys v0.28.0
+   Compiling futures v0.3.34
+   Compiling serde_path_to_error v0.1.20
+   Compiling primeorder v0.14.0
+   Compiling ecdsa v0.17.0
+   Compiling tracing-log v0.2.0
+   Compiling interplane-core v0.3.0 (/tmp/tmp.Bnb7sgz5s5/interplane/rust/crates/interplane-core)
+   Compiling thread_local v1.1.10
+   Compiling matchit v0.7.3
+   Compiling hyper v1.11.1
+   Compiling tokio-util v0.7.19
+   Compiling tower v0.5.3
+   Compiling tokio-tungstenite v0.24.0
+   Compiling fallible-streaming-iterator v0.1.9
+   Compiling darling_macro v0.24.1
+   Compiling nu-ansi-term v0.50.3
+   Compiling fallible-iterator v0.3.0
+warning: aegis@0.2.0: mojo binary not found on PATH, skipping libaegis_simd.so build
+   Compiling anyhow v1.0.104
+   Compiling tower-http v0.5.2
+   Compiling aien-capability v0.1.0 (https://github.com/aien-dev/aien-sovereign-core.git?rev=9b5e6e82359f4ad6b6f03042e83ef6411c5f15ce#9b5e6e82)
+   Compiling p256 v0.14.0
+   Compiling tokio-stream v0.1.19
+   Compiling tracing-subscriber v0.3.23
+   Compiling libloading v0.8.9
+   Compiling clap v4.6.7
+   Compiling rustix v1.1.5
+   Compiling tower-http v0.6.11
+   Compiling tokio-rustls v0.26.6
+   Compiling hyper-util v0.1.21
+   Compiling darling v0.24.1
+   Compiling rmcp-macros v3.4.0
+   Compiling aien-provenance v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-provenance)
+   Compiling rusqlite v0.31.0
+   Compiling interplane-lenshift v0.3.0 (/tmp/tmp.Bnb7sgz5s5/interplane/rust/crates/interplane-lenshift)
+   Compiling interplane-crossaxis v0.3.0 (/tmp/tmp.Bnb7sgz5s5/interplane/rust/crates/interplane-crossaxis)
+   Compiling aien-inference-protocol v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-inference-protocol)
+   Compiling aien-evaluation-protocol v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-evaluation-protocol)
+   Compiling tempfile v3.27.0
+   Compiling interplane-crossveil v0.3.0 (/tmp/tmp.Bnb7sgz5s5/interplane/rust/crates/interplane-crossveil)
+   Compiling interplane-provenance v0.0.1 (/tmp/tmp.Bnb7sgz5s5/interplane/provenance)
+   Compiling rmcp v3.4.0
+   Compiling hyper-rustls v0.27.10
+   Compiling axum v0.7.9
+   Compiling aien-agent-state-abi v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-agent-state-abi)
+   Compiling reqwest v0.12.28
+   Compiling interplane-conformance v0.3.0 (/tmp/tmp.Bnb7sgz5s5/interplane/rust/crates/interplane-conformance)
+   Compiling aien-inference-client v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-inference-client)
+   Compiling aien-probe v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aien-protocols/crates/aien-probe)
+   Compiling aegis v0.2.0 (/tmp/tmp.Bnb7sgz5s5/interplane-audit/aegis-runtime)
+   Compiling aien-mcp v0.1.0 (https://github.com/aien-dev/aien-sovereign-core.git?rev=9b5e6e82359f4ad6b6f03042e83ef6411c5f15ce#9b5e6e82)
+   Compiling interplane-adapter-aien v0.1.0 (/tmp/tmp.Bnb7sgz5s5/interplane/adapters/aien)
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 11.60s
+     Running unittests src/lib.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/interplane_adapter_aien-7b8701ff41717375)
+
+running 13 tests
+test provenance_export::tests::rfc3339_known_instants ... ok
+test provenance_export::tests::own_start_ticks_are_readable ... ok
+test rsi_m5::tests::a_used_output_directory_is_refused ... ok
+test provenance_export::tests::refuses_to_overwrite_a_sealed_bundle ... ok
+test fix_the_test::tests::receipt_daemon_block_has_no_absolute_paths ... ok
+test rsi_m5::tests::readme_proposal_is_accepted ... ok
+test rsi_m5::tests::proposals_aimed_at_holdouts_policy_or_code_are_refused ... ok
+test fix_the_test::tests::task_fields_parse ... ok
+test compose_ledger::tests::desk_macs_match_fixed_vectors ... ok
+test compose_ledger::tests::atomic_write_stays_inside_the_workspace ... ok
+test compose_ledger::tests::atomic_write_keeps_the_target_mode_or_the_umask_default ... ok
+test fix_the_test::tests::no_build_output_is_tracked ... ok
+test fix_the_test::tests::fixture_fails_before_and_passes_after_the_solution ... ok
+
+test result: ok. 13 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.11s
+
+     Running unittests src/bin/aien-authority-bridge.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/aien_authority_bridge-adc03e1ecfd89869)
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/approval.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/approval-59624a4fcd313865)
+
+running 15 tests
+test without_a_grant_it_stays_pending ... ok
+test a_grant_never_changes_what_decide_answers ... ok
+test a_continuation_without_a_pending_request_is_refused ... ok
+test grant_for_a_different_effect_is_a_mismatch ... ok
+test grant_held_by_a_minted_effect_is_reserved_and_runs_nothing ... ok
+test replay_of_the_same_request_returns_the_existing_receipt ... ok
+test expired_grant_is_refused ... ok
+test approved_effect_executes_once ... ok
+test cancel_is_terminal_and_a_later_grant_runs_nothing ... ok
+test expired_grant_through_the_pipeline_is_denied ... ok
+test spend_point_provider_failure_after_mint_is_reported_and_recoverable ... ok
+test stale_scope_is_refused_and_denial_is_terminal ... ok
+test host_continuation_executes_once_and_replay_is_refused ... ok
+test spend_point_pipeline_refusal_after_mint_runs_nothing_and_is_reported ... ok
+test model_content_cannot_stand_in_for_a_grant ... ok
+
+test result: ok. 15 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/bridge.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/bridge-cb83fd984a5b9a3e)
+
+running 6 tests
+test per_run_ids_prefixed_by_trace_do_not_collide ... ok
+test forged_authorization_never_turns_a_denial_into_an_execute ... ok
+test execute_needs_this_bridges_own_authorized_decide_once ... ok
+test write_is_held_then_approved_once_and_executes_once ... ok
+test catalog_read_escape_and_malformed_lines ... ok
+test second_approve_attempt_is_refused_whatever_the_first_outcome ... ok
+
+test result: ok. 6 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/compose_ledger.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/compose_ledger-cae556457c73b38a)
+
+running 17 tests
+test m5_model_turn_proposal_is_judged_lands_and_chains ... ignored, NOT_RUN unless AIEN_BIN, M5_HOOK and M5_JUDGE_KEY are set: run with --ignored
+test m5_rsi_judged_change_lands_and_rolls_back ... ignored, NOT_RUN unless AIEN_BIN, M5_HOOK and M5_JUDGE_KEY are set: run with --ignored
+test row10_approval_expiring_between_grant_and_commit_writes_nothing ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test row11_released_grant_reminted_is_refused_by_the_daemon ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test row12_daemon_restart_does_not_make_a_spent_approval_spendable ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test row13_restart_between_intent_and_ack_is_unresolved_not_success ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test row1_approved_write_lands_and_is_done ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test row2_forged_approval_id_mints_nothing ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test row3_target_changed_after_grant_is_stale ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test row4_spent_grant_is_refused_on_replay ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test row5_operator_stop_refuses_and_old_grant_stays_stale ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test row6_adapter_restart_drops_pending_approval ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test row7_injection_corpus_executes_nothing ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test row8_forged_handoff_is_refused_before_compose ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test slice1_fix_the_test_lands_and_tests_pass ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test binding_and_mac_match_the_daemon_form ... ok
+test row9_desk_key_is_out_of_model_reach ... ok
+
+test result: ok. 2 passed; 0 failed; 15 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/compose_ledger_attacks.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/compose_ledger_attacks-e4ff78b26d87cae4)
+
+running 4 tests
+test x1_client_minted_grant_unused_when_the_handoff_refuses ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test x2_no_fallback_write_when_the_daemon_is_gone ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test x3_effect_uses_the_daemon_grant_not_a_client_one ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+test x4_planted_temp_symlink_does_not_redirect_the_write ... ignored, NOT_RUN unless AIEN_BIN names an aien-cli binary: run with --ignored
+
+test result: ok. 0 passed; 0 failed; 4 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+     Running tests/demo_workflow.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/demo_workflow-66def36b2ac54280)
+
+running 8 tests
+test s7_malformed_call_is_rejected_before_the_runtime ... ok
+test s7_stale_catalog_digest_is_refused ... ok
+test s7_restart_drops_pending_approvals_fail_closed ... ok
+test negative_control_misenrolled_write_lets_the_injection_through ... ok
+test s7_changed_approval_arguments_are_refused ... ok
+test s7_provider_failure_is_reported_and_terminal ... ok
+test s7_duplicate_and_replayed_requests_run_once ... ok
+test demo_read_propose_approve_write ... ok
+
+test result: ok. 8 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/exposure.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/exposure-7d79aa8b575ac166)
+
+running 4 tests
+test results_are_labelled_by_what_they_are ... ok
+test workspace_read_holds_the_injected_effect ... ok
+test user_request_only_uses_the_base_rule ... ok
+test host_registered_untrusted_content_holds_every_injected_effect ... ok
+
+test result: ok. 4 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.02s
+
+     Running tests/pipeline.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/pipeline-a537fe18a0dbc5e0)
+
+running 14 tests
+test adapter_source_never_constructs_authorized_effect ... ok
+test catalog_records_both_digests ... ok
+test runtime_failure_is_execution_error ... ok
+test local_ephemeral_effect_is_authorized_by_aien_and_executes_with_receipt ... ok
+test world_mutation_requires_approval_and_never_executes ... ok
+test allowed_read_is_ok_with_workspace_provenance ... ok
+test missing_argument_is_invalid_with_pinned_message ... ok
+test runtime_absent_fails_closed ... ok
+test nonexistent_capability_is_not_found ... ok
+test list_dir_ok_and_trusted_flag_is_honoured ... ok
+test aien_gate_denies_unlisted_shell_command ... ok
+test irreversible_effect_is_denied_with_aiens_reason_and_never_executes ... ok
+test effect_replay_does_not_execute_twice ... ok
+test escape_from_workspace_is_denied ... ok
+
+test result: ok. 14 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.01s
+
+     Running tests/t4_corpus.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/t4_corpus-1048275218ee2fc0)
+
+running 1 test
+test t4_subset_runs_and_every_case_passes ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.18s
+
+   Doc-tests interplane_adapter_aien
+
+running 0 tests
+
+test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+warning: aegis@0.2.0: mojo binary not found on PATH, skipping libaegis_simd.so build
+    Finished `test` profile [unoptimized + debuginfo] target(s) in 0.08s
+     Running tests/t4_corpus.rs (/home/drakestapleton/workspace/interplane-chipsets-L558/target/L558/existing/debug/deps/t4_corpus-1048275218ee2fc0)
+
+running 1 test
+T4: {"cases":32,"content_derived":0,"failed":[],"passed":32,"system":"T4","violations":0}
+test t4_subset_runs_and_every_case_passes ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.19s
+

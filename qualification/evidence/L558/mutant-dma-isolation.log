@@ -1,0 +1,24 @@
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: dma-no-isolation: stderr= stdout={"kind":"capability_request","request_id":"hw-1","runtime":"aienux","capability":"hw_dma_map","arguments":{"identifier":0,"required_features":0,"value":4096,"discovery_generation":"7"},"tool":{"namespace":"hardware","name":"dma.map"},"mapping":{"table_version":"hardware-1","rule_id":"alias:hardware.dma.map","passthrough":false,"catalog_digest":"sha256:e64f1b5ef14f6487fa95bafa83e801a85384c5b28c57e9e30a88fcb96964cd60"}}
+
+
+0 !== 28
+
+    at run (file:///home/drakestapleton/workspace/interplane-chipsets-L558/tests/hardware/acceptance.mjs:16:9)
+    at test (file:///home/drakestapleton/workspace/interplane-chipsets-L558/tests/hardware/acceptance.mjs:26:92)
+    at file:///home/drakestapleton/workspace/interplane-chipsets-L558/tests/hardware/acceptance.mjs:59:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:561:25)
+    at async node:internal/modules/esm/loader:647:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 28,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.21.0

@@ -11,6 +11,7 @@ text Irq "interrupt_bind"
 text Dma "dma_map"
 text Power "power_request"
 text Args "\",\"arguments\":{\"identifier\":"
+text Feat ",\"required_features\":"
 text Val ",\"value\":"
 text Gen ",\"discovery_generation\":\""
 text Tool "\"},\"tool\":{\"namespace\":\"hardware\",\"name\":\""
@@ -259,6 +260,8 @@ check write 1 Run 0 len Run len Run
 name get r 5 false
 check write 1 Args 0 len Args len Args
 number 1 word r 12 4
+check write 1 Feat 0 len Feat len Feat
+number 1 ulong get r 9
 check write 1 Val 0 len Val len Val
 number 1 word r 16 8
 check write 1 Gen 0 len Gen len Gen

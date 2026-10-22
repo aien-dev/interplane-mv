@@ -1,0 +1,236 @@
+[
+  {
+    "id": 1,
+    "url": "https://support.arm.com/documentation/ddi0487/md",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 2,
+    "url": "https://developer.arm.com/documentation/ihi0069/latest",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 3,
+    "url": "https://developer.arm.com/documentation/102923/0100/ITS",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 4,
+    "url": "https://documentation-service.arm.com/static/69ae9767e79f9a1d642aab2d",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 5,
+    "url": "https://documentation-service.arm.com/static/5f8edaeff86e16515cdbe4c6",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 6,
+    "url": "https://www.arm.com/architecture/system-architectures/amba/amba-specifications",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 7,
+    "url": "https://developer.arm.com/-/media/Arm%20Developer%20Community/PDF/IHI0022H_amba_axi_protocol_spec.pdf",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 8,
+    "url": "https://docs.kernel.org/arch/arm64/arm-acpi.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 9,
+    "url": "https://www.kernel.org/doc/html/latest/arch/arm/uefi.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 10,
+    "url": "https://docs.kernel.org/driver-api/firmware/arm_scmi.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 11,
+    "url": "https://docs.kernel.org/driver-api/firmware/psci.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 12,
+    "url": "https://docs.kernel.org/driver-api/firmware/arm_ffa.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 13,
+    "url": "https://docs.kernel.org/driver-api/virtio/virtio.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 14,
+    "url": "https://docs.oasis-open.org/virtio/virtio/v1.3/csd01/virtio-v1.3-csd01.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 15,
+    "url": "https://docs.kernel.org/driver-api/i2c.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 16,
+    "url": "https://docs.kernel.org/driver-api/spi.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 17,
+    "url": "https://docs.kernel.org/driver-api/gpio",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 18,
+    "url": "https://docs.kernel.org/driver-api/clk.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 19,
+    "url": "https://docs.kernel.org/driver-api/pin-control.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 20,
+    "url": "https://docs.kernel.org/driver-api/regulator.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 21,
+    "url": "https://asahilinux.org/docs/platform/feature-support/m1",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 22,
+    "url": "https://www.raspberrypi.com/documentation/computers/io-controllers.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 23,
+    "url": "https://pip-assets.raspberrypi.com/categories/892-raspberry-pi-5/documents/RP-008370-DS-1-rp1-peripherals.pdf?disposition=inline",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 24,
+    "url": "https://docs.nvidia.com/dccpu/patches-config-guide/index.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 25,
+    "url": "https://www.kernel.org/doc/Documentation/devicetree/bindings/arm/qcom-soc.yaml",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 26,
+    "url": "https://www.kernel.org/doc/Documentation/devicetree/bindings/arm/rockchip.yaml",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 27,
+    "url": "https://www.kernel.org/doc/Documentation/devicetree/bindings/arm/mediatek.yaml",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 28,
+    "url": "https://kernel.org/doc/Documentation/devicetree/bindings/arm/sunxi.yaml",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 29,
+    "url": "https://documentation-service.arm.com/static/5fb7e66fd77dd807b9a80c94",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 30,
+    "url": "https://www.kernel.org/doc/html/latest/arch/arm64/booting.html",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 31,
+    "url": "https://www.kernel.org/doc/Documentation/devicetree/bindings/serial/pl011.txt",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 32,
+    "url": "https://support.arm.com/documentation/ddi0183/f/introduction/about-the-uart?lang=en",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 33,
+    "url": "https://www.kernel.org/doc/Documentation/devicetree/bindings/arm/nvidia,tegra.yaml",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 34,
+    "url": "https://www.kernel.org/doc/Documentation/devicetree/bindings/arm/apple.yaml",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 35,
+    "url": "https://www.kernel.org/doc/Documentation/devicetree/bindings/arm/fsl.yaml",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 36,
+    "url": "https://www.kernel.org/doc/Documentation/devicetree/bindings/arm/ti.yaml",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 37,
+    "url": "https://documentation-service.arm.com/static/5f905c71f86e16515cdc1fd0?token=",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 38,
+    "url": "https://developer.arm.com/documentation/den0056",
+    "title": "",
+    "accessed": "2026-10-22"
+  },
+  {
+    "id": 39,
+    "url": "https://documentation-service.arm.com/static/66e1f6a763788e5fed1641d9",
+    "title": "",
+    "accessed": "2026-10-22"
+  }
+]

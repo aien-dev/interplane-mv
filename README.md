@@ -41,6 +41,11 @@ it lives in its own repository and plugs into the core at a boundary. Related re
 - [aien-dev/aien-receipts](https://github.com/aien-dev/aien-receipts): the signed test bundles the
   Spark publishes for this repository, under `interplane/<commit>/bundle.json`.
 
+The additive [hardware intent domain](omega/hardware/README.md) has a runnable
+seed-built Omega mapper for a narrow standards fixture. It preserves runtime
+authority. Production Aienux integration is pending and physical boards are
+NOT_TESTED; see [coverage and limits](docs/hardware/COVERAGE.md).
+
 ## Status (2026-10-19)
 
 - Version 0.3.0 (the Rust workspace version in `rust/Cargo.toml`). Pre-1.0.
