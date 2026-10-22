@@ -82,7 +82,7 @@ record is never rewritten to match a new result.
   daemon log is retained in full, including its warm-up refusal (plain base model, no chat
   template). Effect and INTERPLANE links are labelled missing.
 - `fixtures/real-waldo-aien-chain`: REAL bytes from ONE run (CPU evidence), see `REAL-CHAIN.md`. A tiny
-  WALDO `chatml-v1` model, supervised-fine-tuned on tool-call conversations we wrote and exported with
+  WALDO `chatml-v1` model, supervised-fine-tuned on tool-call conversations I wrote and exported with
   `tokenizer.json` and the standard ChatML template (fork aien-spark/waldo, now archived, `export-tokenizer-json` 4c407d7), is
   loaded by the AIEN daemon (aien-cli, sovereign-core main 12c1a5f, release build, CPU-reference backend).
   AIEN's own generation path (`StreamTurn`) on that loaded model produces the tool-call text; the INTERPLANE

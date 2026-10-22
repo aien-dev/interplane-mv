@@ -38,7 +38,7 @@ from the same model and execution. So:
 3. Model capability. The model must emit a tool call in a dialect INTERPLANE parses. The 1-layer byte model
    of the first attempt could not. The retained model (2 layers, width 128, bf16, context 2048) was trained
    by supervised fine-tuning (WALDO structured conversations, `chatml-v1`, assistant turns supervised) on 46
-   short conversations we wrote (`run-inputs/conversations.jsonl`, CC0), each ending in one `write_file`
+   short conversations I wrote (`run-inputs/conversations.jsonl`, CC0), each ending in one `write_file`
    call in the `aien_legacy` text form. It reproduces the memorised call for the fixed prompt, greedy and
    repeatable (checked twice). It is a memoriser, not a general model; that is stated, not hidden.
 4. The approved write path does not call the model. The content comes from the model UPSTREAM in the same

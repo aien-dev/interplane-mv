@@ -51,7 +51,7 @@ All paths relative to the pinned clones.
 | What | Where |
 |---|---|
 | `ToolDescriptor::new`, `capability_digest` | `aien-sovereign-core/crates/aien-capability/src/tool.rs:7,30` |
-| `catalog_digest` (the catalog digest we publish) | `aien-capability/src/tool.rs:43` |
+| `catalog_digest` (the catalog digest this repository publishes) | `aien-capability/src/tool.rs:43` |
 | `routing_class`, `speculation_safe` (effect classification) | `aien-capability/src/effects.rs:54,74` |
 | `SessionManager::enroll`, `speculative_lane` | `aien-mcp/src/session.rs:38,29` (wraps `McpBroker::admit`, `broker.rs:53`) |
 | `SpeculativeLane::invoke_speculative` (read execution; refuses unsafe effects) | `aien-mcp/src/broker.rs:151` |

@@ -136,7 +136,7 @@ Limits of this leg:
   adapter refuses every continuation instead (allowed by A-ODY).
 - AIEN `ReconciliationRequired` (a provider outcome that is unknown after the grant was spent) has
   no test.
-- AIEN two-phase grant spend (sovereign-core #206) is open upstream in our own repo; A15 shows the
+- AIEN two-phase grant spend (sovereign-core #206) is open upstream in my own repo; A15 shows the
   grant is spent before the provider runs.
 - A15 is detected on T4 through the provider's rejection message; it runs on T4 only (T1 and T2
   use the mock fault, T3 has no provider-failure mapping).
