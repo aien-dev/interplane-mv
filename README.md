@@ -27,7 +27,7 @@ standardizes what crosses between them and makes it measurable.
 
 ## Where it fits in AIEN
 
-INTERPLANE is an attachment of [Aienix](https://github.com/aien-dev/aienix), the core tree of AIEN:
+INTERPLANE is an attachment of [AienOS](https://github.com/aien-dev/aienix), the core tree of AIEN:
 it lives in its own repository and plugs into the core at a boundary. Related repositories:
 
 - [aien-dev/aien-sovereign-core-mv](https://github.com/aien-dev/aien-sovereign-core-mv): the AIEN
