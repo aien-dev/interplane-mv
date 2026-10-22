@@ -1,0 +1,456 @@
+{
+  "executable_sha256": "ca705d08a5a5d780cc319a8fd7943d58676ddcc2ef323dcf4a8e0dc243daf82c",
+  "source_sha256": "402c78dd7646c5be494dc76a3913b2d62766b37fe3c9da0273239d0e9c94c072",
+  "cases": [
+    {
+      "name": "valid-cpu.discover",
+      "exit": 0,
+      "stdout_sha256": "c5c8b0aebc887703eb108d04346fc6823dda8c24e6e3add10a4f8dc6e2e341a0",
+      "stderr": ""
+    },
+    {
+      "name": "valid-timer.arm",
+      "exit": 0,
+      "stdout_sha256": "33a22343459354a1d88318352aab9a58bce29ad27564525866037d27a70ebee3",
+      "stderr": ""
+    },
+    {
+      "name": "valid-interrupt.bind",
+      "exit": 0,
+      "stdout_sha256": "63d526fdc1d36a0635755ca0c21d3ce91b1bce3be016b65ebe189b26bf6b9694",
+      "stderr": ""
+    },
+    {
+      "name": "valid-dma.map",
+      "exit": 0,
+      "stdout_sha256": "33260444730e2cc3230295febe4d7d315110bfbf2ff5733db581baea743bae82",
+      "stderr": ""
+    },
+    {
+      "name": "valid-power.request",
+      "exit": 0,
+      "stdout_sha256": "a5c1624ff0bb8db96baeade47d63d317f854be140f2bbd3d9afffc2688214c49",
+      "stderr": ""
+    },
+    {
+      "name": "unsupported-wire-version",
+      "exit": 21,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 21\n"
+    },
+    {
+      "name": "unsupported-discovery-version",
+      "exit": 21,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 21\n"
+    },
+    {
+      "name": "unsupported-profile",
+      "exit": 22,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 22\n"
+    },
+    {
+      "name": "unsupported-profile-version",
+      "exit": 22,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 22\n"
+    },
+    {
+      "name": "unsupported-vendor",
+      "exit": 22,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 22\n"
+    },
+    {
+      "name": "incompatible-isa",
+      "exit": 23,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 23\n"
+    },
+    {
+      "name": "unsupported-host-isa",
+      "exit": 23,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 23\n"
+    },
+    {
+      "name": "incompatible-endianness",
+      "exit": 23,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 23\n"
+    },
+    {
+      "name": "unsupported-host-endianness",
+      "exit": 23,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 23\n"
+    },
+    {
+      "name": "incompatible-granule",
+      "exit": 23,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 23\n"
+    },
+    {
+      "name": "unsupported-host-granule",
+      "exit": 23,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 23\n"
+    },
+    {
+      "name": "unknown-cpu-features",
+      "exit": 23,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 23\n"
+    },
+    {
+      "name": "required-cpu-feature-absent",
+      "exit": 23,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 23\n"
+    },
+    {
+      "name": "unknown-host-feature",
+      "exit": 23,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 23\n"
+    },
+    {
+      "name": "stale-generation",
+      "exit": 24,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 24\n"
+    },
+    {
+      "name": "future-generation",
+      "exit": 24,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 24\n"
+    },
+    {
+      "name": "zero-host-generation",
+      "exit": 24,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 24\n"
+    },
+    {
+      "name": "forged-catalog-digest",
+      "exit": 24,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 24\n"
+    },
+    {
+      "name": "zero-host-digest",
+      "exit": 24,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 24\n"
+    },
+    {
+      "name": "unknown-timer",
+      "exit": 25,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 25\n"
+    },
+    {
+      "name": "unknown-gic",
+      "exit": 25,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 25\n"
+    },
+    {
+      "name": "unknown-iommu",
+      "exit": 25,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 25\n"
+    },
+    {
+      "name": "unknown-coherency",
+      "exit": 25,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 25\n"
+    },
+    {
+      "name": "contradictory-coherency",
+      "exit": 25,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 25\n"
+    },
+    {
+      "name": "unknown-firmware",
+      "exit": 25,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 25\n"
+    },
+    {
+      "name": "unknown-conduit",
+      "exit": 25,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 25\n"
+    },
+    {
+      "name": "raw-mmio-refused",
+      "exit": 26,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 26\n"
+    },
+    {
+      "name": "unknown-capability",
+      "exit": 26,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 26\n"
+    },
+    {
+      "name": "cpu-out-of-range-id",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "interrupt-sgi-refused",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "interrupt-reserved-refused",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "identifier-u32-max",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "timer-zero",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "timer-overflow",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "dma-no-isolation",
+      "exit": 28,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 28\n"
+    },
+    {
+      "name": "dma-zero-length",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "dma-unaligned",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "dma-over-limit",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "dma-u64-max",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "dma-identifier-out-of-range",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "no-raw-power-address",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "unknown-power-function",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "zero-request-id",
+      "exit": 27,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 27\n"
+    },
+    {
+      "name": "request-id-u64-max",
+      "exit": 0,
+      "stdout_sha256": "0c25a8efdcba9efe07b07b089c783a6f3f287a48f4c849c367c26d9bfb127f86",
+      "stderr": ""
+    },
+    {
+      "name": "noncoherent-dma-explicit",
+      "exit": 0,
+      "stdout_sha256": "33260444730e2cc3230295febe4d7d315110bfbf2ff5733db581baea743bae82",
+      "stderr": ""
+    },
+    {
+      "name": "hvc-and-smc",
+      "exit": 0,
+      "stdout_sha256": "a5c1624ff0bb8db96baeade47d63d317f854be140f2bbd3d9afffc2688214c49",
+      "stderr": ""
+    },
+    {
+      "name": "dma-max-length",
+      "exit": 0,
+      "stdout_sha256": "7dfaa40cf337d9ad88ce816f00388198cd29331b801560f174800640ba9d7d7d",
+      "stderr": ""
+    },
+    {
+      "name": "interrupt-upper-bound",
+      "exit": 0,
+      "stdout_sha256": "59c562765a5a61968f2ca21b336a05f25931c4dc78732fd9a8c8e4d49421f774",
+      "stderr": ""
+    },
+    {
+      "name": "truncated-intent-0",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "truncated-intent-1",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "truncated-intent-4",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "truncated-intent-24",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "truncated-intent-64",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "truncated-intent-95",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "truncated-discovery-0",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "truncated-discovery-1",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "truncated-discovery-24",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "truncated-discovery-64",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "truncated-discovery-95",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "trailing-intent",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "trailing-discovery",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "model-forged-discovery-on-stdin",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "intent-reserved-10",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "intent-reserved-11",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "intent-reserved-72",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "intent-reserved-95",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "discovery-reserved-18",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "discovery-reserved-23",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "discovery-reserved-64",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    },
+    {
+      "name": "discovery-reserved-95",
+      "exit": 20,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr": "hardware refusal 20\n"
+    }
+  ]
+}

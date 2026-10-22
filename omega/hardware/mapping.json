@@ -1,0 +1,51 @@
+{
+  "runtime": "aienux",
+  "table_version": "hardware-1",
+  "rules": [
+    {
+      "id": "alias:hardware.cpu.discover",
+      "kind": "alias",
+      "from": {
+        "namespace": "hardware",
+        "name": "cpu.discover"
+      },
+      "to": "hw_cpu_discover"
+    },
+    {
+      "id": "alias:hardware.timer.arm",
+      "kind": "alias",
+      "from": {
+        "namespace": "hardware",
+        "name": "timer.arm"
+      },
+      "to": "hw_timer_arm"
+    },
+    {
+      "id": "alias:hardware.interrupt.bind",
+      "kind": "alias",
+      "from": {
+        "namespace": "hardware",
+        "name": "interrupt.bind"
+      },
+      "to": "hw_interrupt_bind"
+    },
+    {
+      "id": "alias:hardware.dma.map",
+      "kind": "alias",
+      "from": {
+        "namespace": "hardware",
+        "name": "dma.map"
+      },
+      "to": "hw_dma_map"
+    },
+    {
+      "id": "alias:hardware.power.request",
+      "kind": "alias",
+      "from": {
+        "namespace": "hardware",
+        "name": "power.request"
+      },
+      "to": "hw_power_request"
+    }
+  ]
+}

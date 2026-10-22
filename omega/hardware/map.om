@@ -1,0 +1,319 @@
+note L558 handwritten seeded Omega hardware capability validator and mapper
+note Inputs are model stdin and host-owned discovery fd3, never permission
+text Err "hardware refusal "
+text NL "\n"
+text Hex "0123456789abcdef"
+text Start "{\"kind\":\"capability_request\",\"request_id\":\"hw-"
+text Run "\",\"runtime\":\"aienux\",\"capability\":\"hw_"
+text Cpu "cpu_discover"
+text Timer "timer_arm"
+text Irq "interrupt_bind"
+text Dma "dma_map"
+text Power "power_request"
+text Args "\",\"arguments\":{\"identifier\":"
+text Val ",\"value\":"
+text Gen ",\"discovery_generation\":\""
+text Tool "\"},\"tool\":{\"namespace\":\"hardware\",\"name\":\""
+text Ccpu "cpu.discover"
+text Ctimer "timer.arm"
+text Cirq "interrupt.bind"
+text Cdma "dma.map"
+text Cpower "power.request"
+text Map "\"},\"mapping\":{\"table_version\":\"hardware-1\",\"rule_id\":\"alias:hardware."
+text Digest "\",\"passthrough\":false,\"catalog_digest\":\"sha256:"
+text End "\"}}\n"
+
+fn frame fd int a edit uchar 96 to bool
+pos = ulong 0
+while lt pos 96
+n = read fd a pos sub ulong 96 pos
+if ne n -4
+if le n 0
+ret false
+end
+pos = add pos ulong n
+end
+end
+extra = new uchar 1 0
+n = read fd extra 0 1
+while eq n -4
+n = read fd extra 0 1
+end
+ret eq n 0
+end
+
+fn word a view uchar 96 off ulong count ulong to ulong
+v = ulong 0
+for i ulong count
+v = or v shl ulong get a add off i mul i 8
+end
+ret v
+end
+
+fn shape r view uchar 96 d view uchar 96 to int
+if ne word r 0 4 826890056
+ret 20
+end
+if ne word d 0 4 826562376
+ret 20
+end
+for i ulong 2
+if ne get r add i 10 0
+ret 20
+end
+end
+for i ulong 24
+if ne get r add i 72 0
+ret 20
+end
+end
+for i ulong 6
+if ne get d add i 18 0
+ret 20
+end
+end
+for i ulong 32
+if ne get d add i 64 0
+ret 20
+end
+end
+if or ne get r 4 1 ne get d 4 1
+ret 21
+end
+if or or ne get d 5 1 ne get d 6 1 ne get d 7 0
+ret 22
+end
+ret 0
+end
+
+fn platform r view uchar 96 d view uchar 96 to int
+for i ulong 3
+if or ne get r add i 6 1 ne get d add i 8 1
+ret 23
+end
+end
+if gt get d 11 1
+ret 23
+end
+if ne and get r 9 get d 11 get r 9
+ret 23
+end
+ret 0
+end
+
+fn binding r view uchar 96 d view uchar 96 to int
+if eq word d 24 8 0
+ret 24
+end
+if ne word r 24 8 word d 24 8
+ret 24
+end
+any = uchar 0
+for i ulong 32
+if ne get r add i 32 get d add i 32
+ret 24
+end
+any = or any get d add i 32
+end
+if eq any 0
+ret 24
+end
+ret 0
+end
+
+fn iface d view uchar 96 to int
+if or ne get d 12 1 ne get d 13 3
+ret 25
+end
+if and ne get d 14 0 ne get d 14 3
+ret 25
+end
+if and ne get d 15 1 ne get d 15 2
+ret 25
+end
+if and eq get d 14 0 eq get d 15 2
+ret 25
+end
+if ne get d 16 1
+ret 25
+end
+if and ne get d 17 1 ne get d 17 2
+ret 25
+end
+ret 0
+end
+
+fn values r view uchar 96 d view uchar 96 to int
+op = get r 5
+id = word r 12 4
+val = word r 16 8
+if or lt op 1 gt op 5
+ret 26
+end
+if eq word r 64 8 0
+ret 27
+end
+if eq op 1
+if or ne id 0 ne val 0
+ret 27
+end
+end
+if eq op 2
+if or or ne id 0 eq val 0 gt val 2147483647
+ret 27
+end
+end
+if eq op 3
+if or or lt id 32 gt id 1019 ne val 0
+ret 27
+end
+end
+if eq op 4
+if or or gt id 65535 eq val 0 gt val 1048576
+ret 27
+end
+if ne rem val 4096 0
+ret 27
+end
+if ne get d 14 3
+ret 28
+end
+end
+if eq op 5
+if or or lt id 1 gt id 2 ne val 0
+ret 27
+end
+end
+ret 0
+end
+
+fn number fd int n ulong to void
+buf = new uchar 20 0
+pos = ulong 20
+while gt n 9 bound 20
+pos = sub pos 1
+put buf pos uchar add rem n 10 48
+n = div n 10
+end
+pos = sub pos 1
+put buf pos uchar add n 48
+size = sub ulong 20 pos
+while gt size 0
+w = write fd buf pos size
+if ne w -4
+if le w 0
+exit 29
+end
+pos = add pos ulong w
+size = sub size ulong w
+end
+end
+end
+
+fn check w long n ulong to void
+if ne w long n
+exit 29
+end
+end
+
+fn name op uchar canon bool to void
+if canon
+if eq op 1
+check write 1 Ccpu 0 len Ccpu len Ccpu
+end
+if eq op 2
+check write 1 Ctimer 0 len Ctimer len Ctimer
+end
+if eq op 3
+check write 1 Cirq 0 len Cirq len Cirq
+end
+if eq op 4
+check write 1 Cdma 0 len Cdma len Cdma
+end
+if eq op 5
+check write 1 Cpower 0 len Cpower len Cpower
+end
+else
+if eq op 1
+check write 1 Cpu 0 len Cpu len Cpu
+end
+if eq op 2
+check write 1 Timer 0 len Timer len Timer
+end
+if eq op 3
+check write 1 Irq 0 len Irq len Irq
+end
+if eq op 4
+check write 1 Dma 0 len Dma len Dma
+end
+if eq op 5
+check write 1 Power 0 len Power len Power
+end
+end
+end
+
+fn emit r view uchar 96 to void
+check write 1 Start 0 len Start len Start
+number 1 word r 64 8
+check write 1 Run 0 len Run len Run
+name get r 5 false
+check write 1 Args 0 len Args len Args
+number 1 word r 12 4
+check write 1 Val 0 len Val len Val
+number 1 word r 16 8
+check write 1 Gen 0 len Gen len Gen
+number 1 word r 24 8
+check write 1 Tool 0 len Tool len Tool
+name get r 5 true
+check write 1 Map 0 len Map len Map
+name get r 5 true
+check write 1 Digest 0 len Digest len Digest
+buf = new uchar 64 0
+for i ulong 32
+b = get r add i 32
+put buf mul i 2 get Hex ulong shr b 4
+put buf add mul i 2 1 get Hex ulong and b 15
+end
+check write 1 buf 0 len buf len buf
+check write 1 End 0 len End len End
+end
+
+fn fail code int to int
+check write 2 Err 0 len Err len Err
+number 2 ulong code
+check write 2 NL 0 len NL len NL
+ret code
+end
+
+fn main to int
+r = new uchar 96 0
+d = new uchar 96 0
+if not frame 0 r
+ret fail 20
+end
+if not frame 3 d
+ret fail 20
+end
+code = shape r d
+if ne code 0
+ret fail code
+end
+code = platform r d
+if ne code 0
+ret fail code
+end
+code = binding r d
+if ne code 0
+ret fail code
+end
+code = iface d
+if ne code 0
+ret fail code
+end
+code = values r d
+if ne code 0
+ret fail code
+end
+emit r
+ret 0
+end

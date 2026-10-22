@@ -1,0 +1,183 @@
+{
+  "kind": "catalog",
+  "runtime": "aienux",
+  "catalog_version": "hardware-1",
+  "capabilities": [
+    {
+      "name": "hw_cpu_discover",
+      "description": "Hardware intent cpu.discover; requires Aienux authorization.",
+      "domains": [
+        "hardware"
+      ],
+      "canonical": {
+        "namespace": "hardware",
+        "name": "cpu.discover"
+      },
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "identifier",
+          "value",
+          "discovery_generation"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "integer",
+            "const": 0
+          },
+          "value": {
+            "type": "integer",
+            "const": 0
+          },
+          "discovery_generation": {
+            "type": "string",
+            "pattern": "^[1-9][0-9]{0,19}$"
+          }
+        }
+      }
+    },
+    {
+      "name": "hw_timer_arm",
+      "description": "Hardware intent timer.arm; requires Aienux authorization.",
+      "domains": [
+        "hardware"
+      ],
+      "canonical": {
+        "namespace": "hardware",
+        "name": "timer.arm"
+      },
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "identifier",
+          "value",
+          "discovery_generation"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "integer",
+            "const": 0
+          },
+          "value": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2147483647
+          },
+          "discovery_generation": {
+            "type": "string",
+            "pattern": "^[1-9][0-9]{0,19}$"
+          }
+        }
+      }
+    },
+    {
+      "name": "hw_interrupt_bind",
+      "description": "Hardware intent interrupt.bind; requires Aienux authorization.",
+      "domains": [
+        "hardware"
+      ],
+      "canonical": {
+        "namespace": "hardware",
+        "name": "interrupt.bind"
+      },
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "identifier",
+          "value",
+          "discovery_generation"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "integer",
+            "minimum": 32,
+            "maximum": 1019
+          },
+          "value": {
+            "type": "integer",
+            "const": 0
+          },
+          "discovery_generation": {
+            "type": "string",
+            "pattern": "^[1-9][0-9]{0,19}$"
+          }
+        }
+      }
+    },
+    {
+      "name": "hw_dma_map",
+      "description": "Hardware intent dma.map; requires Aienux authorization.",
+      "domains": [
+        "hardware"
+      ],
+      "canonical": {
+        "namespace": "hardware",
+        "name": "dma.map"
+      },
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "identifier",
+          "value",
+          "discovery_generation"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 65535
+          },
+          "value": {
+            "type": "integer",
+            "minimum": 4096,
+            "maximum": 1048576,
+            "multipleOf": 4096
+          },
+          "discovery_generation": {
+            "type": "string",
+            "pattern": "^[1-9][0-9]{0,19}$"
+          }
+        }
+      }
+    },
+    {
+      "name": "hw_power_request",
+      "description": "Hardware intent power.request; requires Aienux authorization.",
+      "domains": [
+        "hardware"
+      ],
+      "canonical": {
+        "namespace": "hardware",
+        "name": "power.request"
+      },
+      "parameters": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "identifier",
+          "value",
+          "discovery_generation"
+        ],
+        "properties": {
+          "identifier": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 2
+          },
+          "value": {
+            "type": "integer",
+            "const": 0
+          },
+          "discovery_generation": {
+            "type": "string",
+            "pattern": "^[1-9][0-9]{0,19}$"
+          }
+        }
+      }
+    }
+  ]
+}

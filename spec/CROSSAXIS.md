@@ -155,3 +155,13 @@ messages and `BenchTotals`), `BytesOnly`, `EstimatedTokens`, `openai_tools_rende
 `discover(catalog, selection, query, limit)`,
 `expand(selection, catalog, evidence, max_expansions, max_added_per_expansion)` (`None` takes the
 defaults), `selection_digest(selection)`.
+
+## Additive hardware domain (L558)
+
+The initial `hardware` namespace uses the same `MappingTable`, `Catalog` and
+`CapabilityRequest` types. Its seeded-Omega runnable mapper, typed framing,
+profile bounds and qualification limits are specified in
+[`omega/hardware/README.md`](../omega/hardware/README.md).
+Host discovery is distinct from model intent and conveys no permission;
+Crossveil and privileged runtime authorization remain required. Physical targets
+are NOT_TESTED; this domain does not claim a general hardware abstraction layer.
