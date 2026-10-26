@@ -50,6 +50,8 @@ pub const UNAVAILABLE: &str = "aien runtime not available";
 pub const ENGINE_EFFECT: &str = "aien-mcp.EffectClassAuthority";
 
 const MAX_READ_BYTES: u64 = 1 << 20;
+// Pending/replay correlation is retained for the adapter's lifetime, not just a pipeline trace.
+const MAX_EFFECT_REQUESTS: usize = 4096;
 
 /// One capability: AIEN-side name, effects, and the argument schema (all string-typed).
 struct Spec {
@@ -219,10 +221,12 @@ impl AienAuthority {
     }
 
     fn enroll(&mut self, root: PathBuf) -> Result<(), String> {
+        // Pin the workspace object once, rather than resolving its name after approval.
+        let directory = fs::File::open(&root).map_err(|e| format!("workspace: {e}"))?;
         let counter = self.wire_calls.clone();
         let wire = MemoryWire::new(self.descriptors.clone(), move |name, args| {
             counter.fetch_add(1, Ordering::SeqCst);
-            wire_handler(&root, name, args)
+            wire_handler(&root, &directory, name, args)
         });
         let mgr = SessionManager::new();
         self.runtime
@@ -556,6 +560,15 @@ impl AienAuthority {
         effects: ToolEffects,
         exposure: Option<AienExposure>,
     ) -> Decision {
+        let rid = req.request_id.as_str();
+        if !self.exposures.contains_key(rid) && self.exposures.len() >= MAX_EFFECT_REQUESTS {
+            return self.decision(
+                req,
+                DecisionKind::Denied,
+                Some("adapter effect request capacity exhausted"),
+                ENGINE_EFFECT,
+            );
+        }
         if let Some(path) = req.arguments.get("path").and_then(Value::as_str) {
             if let Err(why) = self.confine(path) {
                 return self.decision(
@@ -673,40 +686,105 @@ fn lane_for(lane: &EffectLane, exposure: Option<AienExposure>) -> EffectLane {
 
 /// In-process provider body. Reads run behind `SpeculativeLane::invoke_speculative`; `write_file`
 /// runs only behind `EffectLane::execute_effect`, i.e. only with an AIEN-minted `AuthorizedEffect`.
-fn wire_handler(root: &Path, name: &str, args: &Value) -> CallOutcome {
+fn wire_handler(root: &Path, directory: &fs::File, name: &str, args: &Value) -> CallOutcome {
     if name == "write_file" {
-        return write_handler(root, args);
+        return write_handler(root, directory, args);
     }
     read_handler(root, name, args)
 }
 
-fn write_handler(root: &Path, args: &Value) -> CallOutcome {
+fn write_handler(root: &Path, directory: &fs::File, args: &Value) -> CallOutcome {
     let (Some(path), Some(content)) = (
         args.get("path").and_then(Value::as_str),
         args.get("content").and_then(Value::as_str),
     ) else {
         return CallOutcome::Rejected("missing required argument".into());
     };
-    let p = Path::new(path);
-    let full = if p.is_absolute() {
-        p.to_path_buf()
-    } else {
-        root.join(p)
-    };
-    if full.components().any(|c| c == Component::ParentDir) {
-        return CallOutcome::Rejected(format!("path is outside the workspace: {path}"));
-    }
-    let parent_ok = full
-        .parent()
-        .and_then(|d| fs::canonicalize(d).ok())
-        .is_some_and(|d| d.starts_with(root));
-    if !parent_ok {
-        return CallOutcome::Rejected(format!("path is outside the workspace: {path}"));
-    }
-    match fs::write(&full, content) {
+    match confined_write(root, directory, Path::new(path), content.as_bytes()) {
         Ok(()) => CallOutcome::Finished(json!({"path": path, "bytes": content.len()})),
         Err(e) => CallOutcome::Rejected(format!("cannot write {path}: {e}")),
     }
+}
+
+/// No pathname is opened for writing. Resolve the parent under the enrolled directory,
+/// create a new inode exclusively, and replace the name through that same descriptor.
+/// Final symlinks are refused; a link planted after the check is replaced, never followed.
+#[cfg(target_os = "linux")]
+fn confined_write(
+    root: &Path,
+    directory: &fs::File,
+    path: &Path,
+    content: &[u8],
+) -> std::io::Result<()> {
+    use rustix::fs::{
+        openat, openat2, renameat, statat, unlinkat, AtFlags, FileType, Mode, OFlags, ResolveFlags,
+    };
+    use std::io::{Error, ErrorKind, Write};
+
+    let path = if path.is_absolute() {
+        path.strip_prefix(root)
+            .map_err(|_| Error::new(ErrorKind::PermissionDenied, "outside workspace"))?
+    } else {
+        path
+    };
+    if path.components().any(|c| c == Component::ParentDir) {
+        return Err(Error::new(ErrorKind::PermissionDenied, "outside workspace"));
+    }
+    let name = path
+        .file_name()
+        .ok_or_else(|| Error::new(ErrorKind::InvalidInput, "missing filename"))?;
+    let parent = path
+        .parent()
+        .filter(|p| !p.as_os_str().is_empty())
+        .unwrap_or(Path::new("."));
+    let parent = openat2(
+        directory,
+        parent,
+        OFlags::RDONLY | OFlags::DIRECTORY | OFlags::CLOEXEC,
+        Mode::empty(),
+        ResolveFlags::BENEATH | ResolveFlags::NO_SYMLINKS,
+    )?;
+    match statat(&parent, name, AtFlags::SYMLINK_NOFOLLOW) {
+        Ok(stat) if FileType::from_raw_mode(stat.st_mode) != FileType::RegularFile => {
+            return Err(Error::new(
+                ErrorKind::PermissionDenied,
+                "target is not a regular file",
+            ));
+        }
+        Ok(_) | Err(rustix::io::Errno::NOENT) => {}
+        Err(e) => return Err(e.into()),
+    }
+    static NEXT: AtomicUsize = AtomicUsize::new(0);
+    let temp = format!(
+        ".interplane-write-{}-{}",
+        std::process::id(),
+        NEXT.fetch_add(1, Ordering::Relaxed)
+    );
+    let fd = openat(
+        &parent,
+        &temp,
+        OFlags::WRONLY | OFlags::CREATE | OFlags::EXCL | OFlags::NOFOLLOW | OFlags::CLOEXEC,
+        Mode::RUSR | Mode::WUSR,
+    )?;
+    let result = (|| {
+        let mut file = fs::File::from(fd);
+        file.write_all(content)?;
+        file.sync_all()?;
+        renameat(&parent, &temp, &parent, name)?;
+        Ok(())
+    })();
+    if result.is_err() {
+        let _ = unlinkat(&parent, &temp, AtFlags::empty());
+    }
+    result
+}
+
+#[cfg(not(target_os = "linux"))]
+fn confined_write(_: &Path, _: &fs::File, _: &Path, _: &[u8]) -> std::io::Result<()> {
+    Err(std::io::Error::new(
+        std::io::ErrorKind::Unsupported,
+        "confined writes require Linux openat2",
+    ))
 }
 
 /// Reimplemented: the read provider body (AIEN ships `MemoryWire` but no filesystem tools
@@ -863,12 +941,12 @@ impl RuntimeAuthority for AienAuthority {
             .spec(&req.capability)
             .map(|(_, d)| routing_class(d.effects()) == EffectClass::ReadOnly)
             .unwrap_or(false);
-        let effect = if decision.is_authorized() {
+        let effect = if decision.is_authorized() && !readable {
             self.authorized.remove(rid)
         } else {
             None
         };
-        let replay = if decision.is_authorized() {
+        let replay = if decision.is_authorized() && !readable {
             self.replayed.remove(rid)
         } else {
             None

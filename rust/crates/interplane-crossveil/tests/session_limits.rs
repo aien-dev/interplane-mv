@@ -297,6 +297,97 @@ fn refused_call_uses_its_request_id() {
     assert_eq!(e.message, "duplicate request_id: c8");
 }
 
+#[test]
+fn rejected_turns_do_not_overflow_automatic_inputs() {
+    for malformed in [false, true] {
+        let mut rt = MockRuntime::new();
+        let mut p = pipe(
+            &mut rt,
+            Limits {
+                max_inputs_per_trace: 2,
+                ..Limits::default()
+            },
+        );
+        let good = call("same", "read_file", json!({"path": "/tmp/a"}));
+        let bad = json!({"id": "same", "type": "function",
+            "function": {"name": "read_file", "arguments": "{bad"}});
+        let first = p.run_turn("openai", "m", &turn(vec![good.clone()]), "t", 0);
+        assert_eq!(first.results[0].status, ResultStatus::Ok);
+        for n in 1..20 {
+            p.run_turn(
+                "openai",
+                "m",
+                &turn(vec![if malformed { bad.clone() } else { good.clone() }]),
+                "t",
+                n,
+            );
+            assert!(
+                p.inputs("t").len() <= 2,
+                "rejected calls bypassed the input limit"
+            );
+        }
+        drop(p);
+        assert_eq!(rt.execute_calls, 1, "refusals must never execute");
+    }
+}
+
+#[test]
+fn replay_refusals_do_not_grow_retained_events() {
+    let mut rt = MockRuntime::new();
+    let mut p = pipe(
+        &mut rt,
+        Limits {
+            max_events_per_trace: 8,
+            max_requests_per_trace: 1,
+            max_messages_per_trace: 1,
+            ..Limits::default()
+        },
+    );
+    assert_eq!(admit(&mut p, "t", "m", "r"), ok());
+    let before = p.events.len();
+    for _ in 0..10000 {
+        p.admit_value(&env("t", "m", "r"));
+    }
+    assert!(
+        p.events.len() <= 8,
+        "replay refusals retained unbounded events"
+    );
+    assert!(before > 0);
+    assert_eq!(
+        admit(&mut p, "t", "fresh", "fresh").1.as_deref(),
+        Some("session_closed")
+    );
+    drop(p);
+    assert_eq!(rt.execute_calls, 1);
+}
+
+#[test]
+fn saturated_turn_is_refused_before_any_effect() {
+    let mut rt = MockRuntime::new();
+    let mut p = pipe(
+        &mut rt,
+        Limits {
+            max_inputs_per_trace: 1,
+            ..Limits::default()
+        },
+    );
+    p.register_input(input_rec("host", "t")).unwrap();
+    let out = p.run_turn(
+        "openai",
+        "m",
+        &turn(vec![call("new", "read_file", json!({"path": "/tmp/a"}))]),
+        "t",
+        0,
+    );
+    assert_eq!(
+        out.results[0].error.as_ref().unwrap().code,
+        ErrorCode::SessionClosed
+    );
+    assert!(p.inputs("t").is_empty() && p.events.is_empty());
+    drop(p);
+    assert_eq!((rt.decide_calls, rt.execute_calls), (0, 0));
+}
+
 // -- closed-trace retirement (spec/CORE.md, "Closing a trace") ------------------------------------
 // The retired Python SDK tested the same scenarios and literals.
 

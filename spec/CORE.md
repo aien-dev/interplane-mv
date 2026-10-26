@@ -49,7 +49,8 @@ raised by a model.
 | `max_traces`: traces held at once | 1024 | the first message of a further trace is refused `session_limit_exceeded`; nothing is recorded for it |
 | `max_messages_per_trace`: `message_id`s recorded on one trace | 4096 | the further message is refused `session_limit_exceeded` and not recorded |
 | `max_requests_per_trace`: `request_id`s recorded on one trace | 4096 | the further request is rejected `session_limit_exceeded` before any runtime contact and not recorded |
-| `max_inputs_per_trace`: InputRecords registered on one trace | 4096 | `register_input` fails (host error, as for a duplicate `input_id`); nothing is recorded. `register_input` on a trace that holds no state while `max_traces` are held fails the same way (`session limit exceeded: max_traces`) |
+| `max_inputs_per_trace`: host and automatic result InputRecords on one trace | 4096 | `register_input` fails (host error, as for a duplicate `input_id`); nothing is recorded. A model turn or continuation that cannot retain all its results closes a held trace before contacting the runtime |
+| `max_events_per_trace`: RelayLine events emitted on one trace, including refusals | 4096 | admission reserves its worst-case events before runtime contact; insufficient capacity closes a held trace. No overflow event is retained |
 
 A message or request is refused at exactly the stage, and in exactly the form, at which
 `replayed_message` and `duplicate_request_id` are refused, with the code `session_limit_exceeded`
@@ -57,8 +58,16 @@ and the message `session limit exceeded: <limit name>`. The checks run after the
 duplicate checks (a replay is still reported as `replayed_message`). The trace check applies to the
 first message of a trace that holds no state yet.
 
-**Closing a trace.** `close_trace(trace_id)` is host-only (never reachable from model output or an
-admitted envelope). It drops every piece of the trace's state listed above, including its events,
+Retained-output reservation precedes these message/request checks. It includes malformed,
+duplicate, replayed, over-limit and non-executed results, plus turn metadata. A saturated held
+trace is closed and refused with `session_closed`, with no later execution or retained growth.
+If a new trace cannot fit even its first turn's retained output it is refused with
+`session_limit_exceeded` without retaining state. Host-cleared events do not replenish this
+per-trace event budget; close the trace to retire its replay state safely.
+
+**Closing a trace.** `close_trace(trace_id)` is host-only (never callable by model output or an
+admitted envelope); the pipeline also closes a held trace when its retained-output budget is exhausted.
+It drops every piece of the trace's state listed above, including its events,
 which frees a slot for `max_traces`. Without its ledger a closed trace could not detect replays, so
 any later message, request, registered input or approval continuation on a closed trace is refused
 with `session_closed` (message `session closed: <trace_id>`), at the same stages as above;

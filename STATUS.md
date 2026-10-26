@@ -7,6 +7,14 @@ byte-identical to `conformance/expected/verdicts.json`) · `qualified` (measured
 The Python column records the Python SDK as it stood when it was removed on 2026-10-15 (no Python
 ships here). It is history and is no longer updated; the Rust column is the current state.
 
+Security hardening (2026-10-26, draft): SECNET-01 confines the AIEN write sink with pinned
+directory descriptors and atomic replacement; SECNET-05 bounds generated input records,
+refusal events and adapter correlation state, closing saturated held traces before execution.
+Regression tests are in `adapters/aien/tests/approval.rs` and
+`rust/crates/interplane-crossveil/tests/session_limits.rs`. Local offline Crossveil tests and
+adapter approval/pipeline tests passed after their regressions failed on the vulnerable paths;
+these are tested implementation changes, not deployment or model/backend qualification claims.
+
 | Component | Rust | Python (removed 2026-10-15; last state) | Fixtures | Notes |
 |---|---|---|---|---|
 | Core schemas | specified | specified | validated | 10 schemas under spec/schemas, JSON Schema 2020-12 |

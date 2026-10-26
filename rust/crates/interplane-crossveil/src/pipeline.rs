@@ -395,6 +395,28 @@ impl<'a> Pipeline<'a> {
         self.holds(trace) || self.held_count() < self.limits.max_traces
     }
 
+    /// Reserve the worst-case retained output before admitting any runtime work. A
+    /// saturated trace is closed, not allowed to execute with an incomplete exposure ledger.
+    fn reserve_retained(&mut self, trace: &str, inputs: usize, events: usize) -> bool {
+        if self.is_closed(trace) {
+            return false;
+        }
+        if !self.holds(trace) && self.held_count() >= self.limits.max_traces {
+            return true; // downstream max_traces refusal retains no state
+        }
+        let event_count = self
+            .seq
+            .get(trace)
+            .map_or(0, |n| usize::try_from(*n).unwrap_or(usize::MAX));
+        if self.inputs(trace).len().saturating_add(inputs) > self.limits.max_inputs_per_trace
+            || event_count.saturating_add(events) > self.limits.max_events_per_trace
+        {
+            self.close_trace(trace);
+            return false;
+        }
+        true
+    }
+
     fn closed_refusal(trace: &str) -> (ErrorCode, String) {
         (ErrorCode::SessionClosed, format!("session closed: {trace}"))
     }
@@ -536,6 +558,10 @@ impl<'a> Pipeline<'a> {
         if !self.can_hold(trace) {
             return; // closed, or refused as a further trace: no state may grow for it
         }
+        if self.inputs(trace).len() >= self.limits.max_inputs_per_trace {
+            self.close_trace(trace);
+            return;
+        }
         let prov = r.provenance.as_ref();
         let ledger = self.inputs.entry(trace.to_string()).or_default();
         let mut n = ledger
@@ -566,6 +592,13 @@ impl<'a> Pipeline<'a> {
     fn emit(&mut self, trace: &str, event: EventKind, request_id: Option<&str>) {
         if !self.can_hold(trace) {
             return; // closed, or refused as a further trace: nothing is recorded for it
+        }
+        if self
+            .seq
+            .get(trace)
+            .is_some_and(|n| *n >= self.limits.max_events_per_trace as u64)
+        {
+            return; // reservation already refused execution; never retain an overflow event
         }
         self.event_traces.push(trace.to_string());
         let s = self.seq.entry(trace.to_string()).or_insert(0);
@@ -615,6 +648,14 @@ impl<'a> Pipeline<'a> {
             .unwrap_or("unknown")
             .to_string();
         let peek = valid_rid(v);
+        if !self.reserve_retained(&trace, 0, 5) && !self.is_closed(&trace) {
+            return self.reject(
+                &trace,
+                peek.as_deref(),
+                ErrorCode::SessionLimitExceeded,
+                "session limit exceeded: retained state",
+            );
+        }
         // Version first, before anything else is read.
         match v
             .get("interplane_version")
@@ -648,6 +689,14 @@ impl<'a> Pipeline<'a> {
 
     /// Admit a parsed envelope. Order: version, structure, replay, duplicate, size, map, decide, execute.
     pub fn admit_envelope(&mut self, env: &Envelope) -> (ToolResult, ObservedRecord) {
+        if !self.reserve_retained(&env.trace_id, 0, 5) && !self.is_closed(&env.trace_id) {
+            return self.reject(
+                &env.trace_id,
+                None,
+                ErrorCode::SessionLimitExceeded,
+                "session limit exceeded: retained state",
+            );
+        }
         self.admit_checked(env, None, None)
     }
 
@@ -1050,6 +1099,9 @@ impl<'a> Pipeline<'a> {
         if self.is_closed(trace) {
             return Err(Refusal::SessionClosed);
         }
+        if !self.reserve_retained(trace, 1, 3) {
+            return Err(Refusal::SessionClosed);
+        }
         let key = (trace.to_string(), request_id.to_string());
         let mut p = match self.pending.remove(&key) {
             Some(p) if p.lc.state() == State::RequiresApproval => p,
@@ -1144,6 +1196,9 @@ impl<'a> Pipeline<'a> {
         if self.is_closed(trace) {
             return Err(Refusal::SessionClosed);
         }
+        if !self.reserve_retained(trace, 1, 1) {
+            return Err(Refusal::SessionClosed);
+        }
         let key = (trace.to_string(), request_id.to_string());
         let mut p = match self.pending.remove(&key) {
             Some(p) if p.lc.state() == State::RequiresApproval => p,
@@ -1200,9 +1255,6 @@ impl<'a> Pipeline<'a> {
         turn: u64,
     ) -> TurnOutcome {
         self.turn = Some(turn);
-        if turn > 0 {
-            self.emit(trace_id, EventKind::Continue, None);
-        }
         let mut out = TurnOutcome {
             turn,
             intents: vec![],
@@ -1231,6 +1283,25 @@ impl<'a> Pipeline<'a> {
             }
         };
         let mut parsed = parsed;
+        // Five events per call (request, mapping, decision, execution, result),
+        // plus turn metadata. Include malformed/over-limit calls and every result input.
+        let calls = parsed.intents.len().saturating_add(parsed.rejected.len());
+        let events = calls.saturating_mul(5).saturating_add(4);
+        if !self.reserve_retained(trace_id, calls, events) {
+            out.error_code = Some(if self.is_closed(trace_id) {
+                ErrorCode::SessionClosed
+            } else {
+                ErrorCode::SessionLimitExceeded
+            });
+            // Existing closed-trace callers still receive per-call refusals below.
+            // A saturated new trace holds no state and must not reach the runtime.
+            if !self.is_closed(trace_id) {
+                return out;
+            }
+        }
+        if turn > 0 {
+            self.emit(trace_id, EventKind::Continue, None);
+        }
         let exposure = self.exposure_for(trace_id);
         for intent in &mut parsed.intents {
             intent.provenance.extensions.insert(
@@ -1280,6 +1351,14 @@ impl<'a> Pipeline<'a> {
             match item {
                 Item::Rejected(i) => {
                     let r = &parsed.rejected[i];
+                    if self.is_closed(trace_id) {
+                        let (code, message) = Self::closed_refusal(trace_id);
+                        let (res, o) = self.reject(trace_id, Some(&r.request_id), code, &message);
+                        out.rendered.push(self.render(dialect, &res, None));
+                        out.results.push(res);
+                        out.records.push(o);
+                        continue;
+                    }
                     self.note_refused_request(trace_id, &r.request_id);
                     let (res, o) =
                         self.reject(trace_id, Some(&r.request_id), r.code.clone(), &r.message);

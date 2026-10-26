@@ -22,6 +22,8 @@ serde = "1"
 serde_json = "1"
 sha2 = "0.10"
 tokio = { version = "1", features = ["rt"] }
+# Linux descriptor-relative filesystem binding; see README's dependency boundary.
+rustix = { version = "=1.1.5", features = ["fs"] }
 # Pinned AIEN sources: aien-dev/aien-sovereign-core main at 9b5e6e8. aien-capability and aien-mcp are byte-identical since 4d4dfd4 (git diff --stat 4d4dfd4 9b5e6e8 -- crates/aien-capability crates/aien-mcp is empty) and the live gate (scripts/test-live-daemon.sh) passed against a daemon built from 9b5e6e8. At 4d4dfd4 (#296 merged: the daemon honours only grants it minted itself, sovereign-core #261; #295 merged: an approved proposal carries a signed requirements goal and a missing one is refused, #289). aien-capability and aien-mcp are byte-identical to 8bcd79b (#262 merged: the authenticated ComposeApprovedProposal daemon command this adapter hands approved writes to; aien-capability and aien-mcp are byte-identical to 7d37da1, #260 merged: two-phase approval spend, reserve/commit/release, EffectLane::with_clock). Before that, aien-capability and aien-mcp were unchanged since 0bdc97a (PR #208: idempotency ledger bound to effect identity, revocable unspent grants; #207 exposure-aware authority; #204 single-use approvals).
 aien-capability = { git = "https://github.com/aien-dev/aien-sovereign-core.git", rev = "9b5e6e82359f4ad6b6f03042e83ef6411c5f15ce" }
 aien-mcp = { git = "https://github.com/aien-dev/aien-sovereign-core.git", rev = "9b5e6e82359f4ad6b6f03042e83ef6411c5f15ce" }
