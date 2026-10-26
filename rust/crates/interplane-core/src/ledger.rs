@@ -19,6 +19,9 @@ pub struct Limits {
     pub max_requests_per_trace: usize,
     #[serde(default = "default_session")]
     pub max_inputs_per_trace: usize,
+    /// Retained RelayLine events per trace, including refusals.
+    #[serde(default = "default_session")]
+    pub max_events_per_trace: usize,
     /// Closed trace ids remembered exactly (CORE.md, "Closing a trace"); older ones are retired.
     #[serde(default = "default_session")]
     pub max_closed_traces: usize,
@@ -50,6 +53,7 @@ impl Default for Limits {
             max_messages_per_trace: 4096,
             max_requests_per_trace: 4096,
             max_inputs_per_trace: 4096,
+            max_events_per_trace: 4096,
             max_closed_traces: 4096,
             retired_filter_bits: 8_388_608,
         }

@@ -44,6 +44,21 @@ Building `aegis-runtime` at the pinned commit (f4e8709, 2026-10-04) writes `mojo
 checkout (its `build.rs`) when a `mojo` compiler is installed. aegis-runtime removed Mojo on its `main` on
 2026-10-15 (aegis-runtime PR #49); the pin here has not moved past that yet.
 
+The in-process write provider uses `rustix` **1.1.5** as an explicit Linux syscall
+binding (`openat2`, `openat`, `statat`, `renameat`, `unlinkat`). This is a host dependency,
+not Omega code. The Omega replacement is a descriptor-relative host filesystem boundary
+with beneath/no-symlinks resolution and exclusive-create/atomic-replace operations; it is
+not implemented by this Rust adapter. No pathname fallback is used on kernels without
+`openat2` or on non-Linux systems: writes fail closed. The workspace descriptor is opened
+at enrollment, parent symlinks and non-regular final entries are refused, and existing
+regular files are atomically replaced rather than truncated (hard links are not written through).
+
+Effect request correlation, exposure and replay handles are retained for the adapter's
+lifetime and bounded to 4096 distinct effect request ids. New effect ids are denied when
+that capacity is exhausted; existing approvals/replays and reads remain available. A host
+must finish or abandon outstanding approvals before retiring that adapter and creating a
+fresh one. Closing a pipeline trace alone does not retire the adapter's correlation state.
+
 ## Reused from AIEN (called for real)
 
 All paths relative to the pinned clones.

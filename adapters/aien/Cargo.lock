@@ -1264,6 +1264,7 @@ dependencies = [
  "interplane-crossveil",
  "interplane-lenshift",
  "interplane-provenance",
+ "rustix",
  "serde",
  "serde_json",
  "sha2 0.10.9",

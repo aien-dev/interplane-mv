@@ -97,6 +97,87 @@ fn approved_effect_executes_once() {
     assert_eq!(rt.wire_calls(), 1);
 }
 
+#[cfg(unix)]
+#[test]
+fn approved_write_rejects_dangling_final_symlink() {
+    let d = ws();
+    let outside = ws();
+    let target = outside.path().join("escaped.txt");
+    std::os::unix::fs::symlink(&target, d.path().join("note.txt")).unwrap();
+    let mut rt = adapter(d.path());
+    let r = req("r1", "note.txt", "must stay inside");
+    pend(&mut rt, &r);
+    let grant = rt.issue_approval(&r, 100).unwrap();
+    let (_, res) = approve(&mut rt, &r, &grant, 10);
+    assert!(
+        !target.exists(),
+        "approved write escaped through a dangling symlink"
+    );
+    assert_ne!(res.unwrap().status, ResultStatus::Ok);
+}
+
+#[cfg(unix)]
+#[test]
+fn approved_write_rejects_symlink_swap_after_approval() {
+    let d = ws();
+    let outside = ws();
+    let target = outside.path().join("protected.txt");
+    std::fs::write(&target, "original").unwrap();
+    std::fs::write(d.path().join("note.txt"), "inside").unwrap();
+    let mut rt = adapter(d.path());
+    let r = req("r1", "note.txt", "must stay inside");
+    pend(&mut rt, &r);
+    let grant = rt.issue_approval(&r, 100).unwrap();
+    let dec = rt.present_approval(&r, &grant, 10);
+    assert!(dec.is_authorized());
+    std::fs::remove_file(d.path().join("note.txt")).unwrap();
+    std::os::unix::fs::symlink(&target, d.path().join("note.txt")).unwrap();
+    let res = rt.execute(&r, &dec, &ctx());
+    assert_eq!(std::fs::read_to_string(&target).unwrap(), "original");
+    assert_ne!(res.status, ResultStatus::Ok);
+}
+
+#[test]
+fn pending_effect_metadata_has_a_fail_closed_capacity() {
+    let d = ws();
+    let mut rt = adapter(d.path());
+    for n in 0..4096 {
+        pend(&mut rt, &req(&format!("r{n}"), "a.txt", "x"));
+    }
+    let refusal = rt.decide(&req("overflow", "a.txt", "x"), &ctx());
+    assert_eq!(refusal.decision, DecisionKind::Denied);
+    assert_eq!(rt.wire_calls(), 0);
+}
+
+#[test]
+fn read_does_not_consume_another_traces_reserved_write() {
+    let d = ws();
+    std::fs::write(d.path().join("note.txt"), "original").unwrap();
+    let mut rt = adapter(d.path());
+    let write = req("same-id", "note.txt", "unexpected effect");
+    pend(&mut rt, &write);
+    let grant = rt.issue_approval(&write, 100).unwrap();
+    assert!(rt.present_approval(&write, &grant, 10).is_authorized());
+    let mut read = req("same-id", "note.txt", "");
+    read.capability = "read_file".into();
+    read.arguments.remove("content");
+    let mut other_trace = ctx();
+    other_trace.trace_id = "other".into();
+    let dec = rt.decide(&read, &other_trace);
+    assert!(dec.is_authorized());
+    let result = rt.execute(&read, &dec, &other_trace);
+    assert_eq!(
+        std::fs::read_to_string(d.path().join("note.txt")).unwrap(),
+        "original"
+    );
+    assert_eq!(result.status, ResultStatus::Ok);
+    assert_eq!(result.data["content"], "original");
+    assert!(
+        rt.discard_unexecuted("same-id"),
+        "read must not spend the reserved effect"
+    );
+}
+
 #[test]
 fn a_continuation_without_a_pending_request_is_refused() {
     let d = ws();
