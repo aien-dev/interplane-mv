@@ -3,7 +3,9 @@
 Since 2026-10-16 the DGX Spark is the only test judge for this repository (ADR 0033 Decision 11,
 phase 3, agreed by Drake on 2026-10-15). On 2026-10-18 the hosted test workflows were removed; the
 only test-related workflow left is AIEN Verification (`.github/workflows/aien-verification.yml`),
-which builds nothing from this repository and only checks the bundle the Spark signs. The manual
+which checks the bundle the Spark signs. On pull requests that workflow also runs
+`cargo build --locked` and `cargo test --locked` in `provenance/`. It does not build the rest of
+this repository. The manual
 `qualification` workflow stays: it probes a live model endpoint on a self-hosted runner and tests no
 code on GitHub. Each former hosted job is a Spark gate in `tests/gates/`.
 

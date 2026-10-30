@@ -11,7 +11,8 @@ use sha2::{Digest, Sha256};
 
 /// Lower-case hex SHA-256 of raw bytes.
 pub fn sha256_hex(b: &[u8]) -> String {
-    format!("{:x}", Sha256::digest(b))
+    // sha2 0.11's digest output does not implement LowerHex.
+    hex::encode(Sha256::digest(b))
 }
 
 /// Drop JSON whitespace outside strings. Bytes inside strings are kept exactly.
