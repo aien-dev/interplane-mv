@@ -40,8 +40,10 @@ standardizes what crosses between them and makes it measurable.
 
 ## Where it fits in AIEN
 
-INTERPLANE is an attachment of [AienOS](https://github.com/aien-dev/aienix), the core tree of AIEN:
-it lives in its own repository and plugs into the core at a boundary. Related repositories:
+INTERPLANE is an attachment of [Sovereign Intelligence (SI)](https://github.com/aien-dev/sovereign-intelligence).
+It lives in its own repository. SI's repository index lists it under "Design, protocols and proof"
+([ADR 0045](https://github.com/aien-dev/aien-architecture-mv/blob/f13c6238e585b284a87e7f5b227f7f8a1bc6bef7/docs/adr/0045-aienix-retired-sovereign-intelligence-center.md)).
+Related repositories:
 
 - [aien-dev/aien-sovereign-core-mv](https://github.com/aien-dev/aien-sovereign-core-mv): the AIEN
   host runtime. `adapters/aien` pins its `aien-capability` and `aien-mcp` crates. Its `aien-test`
