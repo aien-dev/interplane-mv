@@ -1,5 +1,13 @@
 # Contributing
 
+Development follows [Human-Directed Agentic Engineering (HDAE)](README.md#human-directed-agentic-engineering),
+with the method and Kurtzer case-study citation recorded in the README. Humans set goals,
+architecture, constraints, acceptance criteria, and stopping points. Agents implement,
+check, diagnose, and revise within those boundaries; human review remains responsible
+for claims, acceptance, and release decisions. The protocol's runtime authority rules
+are unchanged.
+
+
 - Small conventional commits (`feat(core): ...`, `test(conformance): ...`). One conceptual layer per PR.
 - Schemas and fixtures are normative. A change that alters an expected fixture outcome is a protocol
   change and needs a CHANGELOG entry and, during 0.x, a MINOR bump.

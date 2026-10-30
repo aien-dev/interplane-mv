@@ -12,6 +12,19 @@ the decision across the boundary and refuses to upgrade a decision. Website:
 [interplane.io](https://interplane.io) (its source is
 [aien-dev/interplane.io](https://github.com/aien-dev/interplane.io)).
 
+## Human-Directed Agentic Engineering
+
+Development follows Human-Directed Agentic Engineering (HDAE): humans define goals,
+architecture, constraints, acceptance criteria, and stopping points; agents implement,
+execute checks, diagnose failures, and revise within those boundaries. Human review
+retains responsibility for claims, acceptance, and release decisions. This development
+method does not alter the protocol boundary: runtimes retain execution authority.
+
+For the documented method and a systems-software case study, see Gregory M. Kurtzer,
+[*Ginux: Building an Independent Kernel That Runs Linux Userspace through
+Human-Directed Agentic Engineering* (2026)](https://doi.org/10.5281/zenodo.23682548).
+
+
 ```
 Model side:        Qwen3.5      Ajax (when published)      other local or hosted models
                         \            |             /
