@@ -17,3 +17,8 @@ updates:
     schedule:
       interval: monthly
     versioning-strategy: lockfile-only
+  - package-ecosystem: cargo
+    directory: /adapters/aien
+    schedule:
+      interval: monthly
+    versioning-strategy: lockfile-only
