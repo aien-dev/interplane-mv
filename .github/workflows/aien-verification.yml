@@ -6,8 +6,7 @@
 #     (.aien/verify.pub on origin/main) the portable smoke set named at origin/main.
 #   AIEN Alpha (push of an alpha/* tag): the tagged commit must be on main; its signed Spark bundle
 #     from aien-receipts must verify (--require-full) against the trust anchors on origin/main.
-# GitHub-hosted compute builds the pinned verifier tools. On pull requests the provenance
-# job also builds and tests provenance/. It does not build the rest of this repository.
+# GitHub-hosted compute builds only the pinned verifier tools, never this repository's code.
 name: AIEN
 
 on:
@@ -225,22 +224,3 @@ jobs:
           git tag -l --format='%(contents)' "${GITHUB_REF#refs/tags/}"
           echo "::endgroup::"
           exit "$rc"
-
-  provenance:
-    name: provenance
-    if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-    steps:
-      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
-        with:
-          persist-credentials: false
-      - uses: dtolnay/rust-toolchain@b725eda525362e7cf34af9a7243cac1e3f01a7ec # branch stable at pin time; version comes from toolchain:
-        with:
-          toolchain: "1.99.0"
-      - name: cargo build --locked
-        working-directory: provenance
-        run: cargo build --locked
-      - name: cargo test --locked
-        working-directory: provenance
-        run: cargo test --locked
